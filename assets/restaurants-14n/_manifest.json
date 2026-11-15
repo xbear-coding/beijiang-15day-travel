@@ -1,0 +1,238 @@
+{
+ "afanti": [
+  {
+   "file": "food_afanti.jpg",
+   "w": 600,
+   "h": 600,
+   "kb": 80.7,
+   "md5": "af3ec3802c978614d56afd4207341a4e"
+  }
+ ],
+ "daheyan": [
+  {
+   "file": "food_daheyan.jpg",
+   "w": 501,
+   "h": 375,
+   "kb": 32.8,
+   "md5": "af311024e94442abef4f4e084fcdf881"
+  },
+  {
+   "file": "food_daheyan_1.jpg",
+   "w": 400,
+   "h": 300,
+   "kb": 41.3,
+   "md5": "df841dc7198ad3e4172f9e40c9840481"
+  },
+  {
+   "file": "food_daheyan_2.jpg",
+   "w": 400,
+   "h": 300,
+   "kb": 37.2,
+   "md5": "e953db5441f38a3780fe427f841080e6"
+  }
+ ],
+ "huasheng": [
+  {
+   "file": "food_huasheng.jpg",
+   "w": 501,
+   "h": 375,
+   "kb": 42.0,
+   "md5": "3fabc082010f0ebb50c177b5b05f1330"
+  }
+ ],
+ "jiangke": [
+  {
+   "file": "food_jiangke.jpg",
+   "w": 501,
+   "h": 375,
+   "kb": 46.0,
+   "md5": "5aa2482e9438c1d72ce8b7c9b616a8b8"
+  },
+  {
+   "file": "food_jiangke_1.jpg",
+   "w": 400,
+   "h": 300,
+   "kb": 28.9,
+   "md5": "0cbb0c0de525f0b492a91e9ee934b61f"
+  },
+  {
+   "file": "food_jiangke_2.jpg",
+   "w": 400,
+   "h": 300,
+   "kb": 45.0,
+   "md5": "2f9a33d92931066081f6813efbb77229"
+  }
+ ],
+ "lingxiaowuge": [
+  {
+   "file": "food_lingxiaowuge.jpg",
+   "w": 400,
+   "h": 300,
+   "kb": 55.5,
+   "md5": "ec55f53f85b283c25ece74b66354539f"
+  },
+  {
+   "file": "food_lingxiaowuge_1.jpg",
+   "w": 400,
+   "h": 300,
+   "kb": 41.2,
+   "md5": "a2e329bf856afd246a233eab099af841"
+  },
+  {
+   "file": "food_lingxiaowuge_2.jpg",
+   "w": 400,
+   "h": 300,
+   "kb": 42.6,
+   "md5": "781e8441be1fcfb0dd4a42d8b44b65fb"
+  }
+ ],
+ "mafenghua": [
+  {
+   "file": "food_mafenghua.jpg",
+   "w": 400,
+   "h": 533,
+   "kb": 93.4,
+   "md5": "a1e2029bebef5e7363f89d1e1b087b8b"
+  },
+  {
+   "file": "food_mafenghua_1.jpg",
+   "w": 400,
+   "h": 533,
+   "kb": 74.8,
+   "md5": "7f13327ae87cb7b18965e155759732dd"
+  },
+  {
+   "file": "food_mafenghua_2.jpg",
+   "w": 400,
+   "h": 533,
+   "kb": 78.3,
+   "md5": "5c78e0c390b9994f0e24cfa82d7c419a"
+  }
+ ],
+ "mafenghua_airport": [
+  {
+   "file": "food_mafenghua_airport.jpg",
+   "w": 400,
+   "h": 533,
+   "kb": 74.8,
+   "md5": "fa757ab502b0862f72d21c213f3655bf"
+  },
+  {
+   "file": "food_mafenghua_airport_1.jpg",
+   "w": 400,
+   "h": 533,
+   "kb": 74.7,
+   "md5": "84dc735e5dc403c260b65f4805b93a8e"
+  },
+  {
+   "file": "food_mafenghua_airport_2.jpg",
+   "w": 400,
+   "h": 533,
+   "kb": 110.1,
+   "md5": "af0a0637f03b3a7f3811455efa2877d3"
+  }
+ ],
+ "momo": [
+  {
+   "file": "food_momo.jpg",
+   "w": 640,
+   "h": 640,
+   "kb": 141.4,
+   "md5": "8abdb2f6a9b18feab3e106e2f824adba"
+  }
+ ],
+ "siluyouyue": [
+  {
+   "file": "food_siluyouyue.jpg",
+   "w": 400,
+   "h": 300,
+   "kb": 31.1,
+   "md5": "b67a8dc4e09f8d2415f9502c9b1240d9"
+  },
+  {
+   "file": "food_siluyouyue_1.jpg",
+   "w": 400,
+   "h": 300,
+   "kb": 28.3,
+   "md5": "07cc04de098868be4b8dfa769422fe6e"
+  },
+  {
+   "file": "food_siluyouyue_2.jpg",
+   "w": 400,
+   "h": 300,
+   "kb": 37.0,
+   "md5": "e8999f43638e8b22cabe3d553a78b675"
+  }
+ ],
+ "taijia": [
+  {
+   "file": "food_taijia.jpg",
+   "w": 501,
+   "h": 375,
+   "kb": 46.4,
+   "md5": "f5a8d266382748b652196541524c6292"
+  },
+  {
+   "file": "food_taijia_1.jpg",
+   "w": 501,
+   "h": 375,
+   "kb": 42.6,
+   "md5": "466d3130baefcce49cd8d4a2e2f45e20"
+  },
+  {
+   "file": "food_taijia_2.jpg",
+   "w": 501,
+   "h": 375,
+   "kb": 40.6,
+   "md5": "f4c4d81a6ce4cd66393e64ca88ce8b1f"
+  }
+ ],
+ "taoyuan": [
+  {
+   "file": "food_taoyuan.jpg",
+   "w": 640,
+   "h": 640,
+   "kb": 138.7,
+   "md5": "c2b88bdac81a0f180366a6174f127a08"
+  }
+ ],
+ "wangfulou": [
+  {
+   "file": "food_wangfulou.jpg",
+   "w": 640,
+   "h": 639,
+   "kb": 76.1,
+   "md5": "12b32c3ae6f91c8ae00db26d5819aff6"
+  },
+  {
+   "file": "food_wangfulou_1.jpg",
+   "w": 501,
+   "h": 375,
+   "kb": 54.3,
+   "md5": "f454d2dfb648fa7f83518994e345de90"
+  }
+ ],
+ "yunduanmanju": [
+  {
+   "file": "food_yunduanmanju.jpg",
+   "w": 400,
+   "h": 300,
+   "kb": 30.0,
+   "md5": "ba2fa5246790ce321cce74c291b9a218"
+  },
+  {
+   "file": "food_yunduanmanju_1.jpg",
+   "w": 400,
+   "h": 300,
+   "kb": 29.7,
+   "md5": "6b1535b7aa59da65bf46dafea1afea03"
+  },
+  {
+   "file": "food_yunduanmanju_2.jpg",
+   "w": 400,
+   "h": 300,
+   "kb": 28.6,
+   "md5": "dfef8530e1ea73b51e090d4393cdce03"
+  }
+ ]
+}
