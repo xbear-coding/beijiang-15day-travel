@@ -769,7 +769,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
     <div><table class="expense-table"><thead><tr><th>分类</th><th>项目</th><th>说明</th><th>金额</th><th>谁付</th><th>怎么来的</th><th>出处</th></tr></thead><tbody id="expenseBody"></tbody></table></div>
     <div class="expense-reserve" style="margin-top:1rem;padding:.9rem 1rem;background:var(--bg-card);border-left:3px solid var(--danger);font-size:.85rem;color:var(--text-secondary);line-height:1.7">
       <b>⚠️ 现场可能另付 · 单列预留（不进上面合计与人均分摊）</b>
-      <p style="margin:.5rem 0 0">① 门票/停车增量（Q14 A、自驾 0 区间车，待现场核价）：五彩滩 ¥66 + 魔鬼城 ¥120 + 观光缆车 ¥0 + 停车 ¥0–100，三人合计 <b>¥186–286</b>（人均 ¥62–95）；若现场确认冬季仍有白哈巴区间车 ¥45/人，加 ¥135 → <b>¥321–421</b>；改 B/C 缆车方案另 +¥564。</p>
+      <p style="margin:.5rem 0 0">① 门票/停车增量（自驾不坐区间车，待现场核价）：五彩滩 ¥66 + 魔鬼城 ¥120 + 观光缆车 ¥0 + 停车 ¥0–100，三人合计 <b>¥186–286</b>（人均 ¥62–95）；若现场确认冬季仍有白哈巴区间车 ¥45/人，加 ¥135 → <b>¥321–421</b>；改坐缆车方案另 +¥564。</p>
       <p style="margin:.5rem 0 0">② 跨天数/票价最坏敏感性（单列，不并入公摊池）：全域票跨约 6 天补 1 张 +¥300；平台日票 6 天 +¥1,500；赛湖若按 70/人 +¥105；合计最坏 <b>+¥405～+¥1,605</b>。现场/政策变量，未出定值前不计入合计。</p>
     </div>
     <div class="settlement" id="settlement"></div>
@@ -805,7 +805,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
     <div id="tipsList"></div>
     <h3 class="page-title" style="font-size:1.15rem;margin-top:2rem">官方公告（每条都能点开核对原文）</h3>
     <ul class="tips-list" style="margin-top:.6rem">
-      <li><a href="https://kns.gov.cn/005/005002/20251023/9b6b36ac-c16d-4b28-84a6-dda609d72f5c.html" target="_blank" rel="noopener">喀纳斯景区冬季游览公告（管委会 2025-10-13，2026 季未见新版单发公告，官网旅游页 2026-10-30 仍写"继续执行冬季全域门票"）：冬季全域票 100 元/人·3 天，含喀纳斯+禾木+白哈巴；禾木自驾须"原行网"小程序现场预约（72 公里售票处或禾木游客中心，带行驶证+驾照，每日 10:00 放号、约满即止）；哈纳斯村、白哈巴村冬季可自驾进并在指定区域停放；日承载 1.2 万人（2025-10 公告口径）</a></li>
+      <li><a href="https://www.kns.gov.cn/005/005002/20261030/e8443d16-999c-4d34-b991-323e1bc8327a.html" target="_blank" rel="noopener">喀纳斯景区冬季游览安全提示（管委会 2026-10-15 单发，2026-10-16–2027-04-30 执行）：全域票 100 元/人·3 天，含喀纳斯+禾木+白哈巴；禾木自驾须"原行网"小程序预约（带行驶证+驾照，每日 10:00 放号、约满即止）；哈纳斯村、白哈巴村冬季可自驾进并在指定区域停放；日最大承载 1.4 万人</a></li>
       <li><a href="https://kns.gov.cn/001/001004/20230520/06b83d7b-65e1-4c93-b5e2-a65cfb502998.html" target="_blank" rel="noopener">喀纳斯门票与区间车价格公示：旺季 5/1–10/15，淡季 10/16–次年 4/30；全域票旺季 195、淡季 100 元/人次·3 天</a></li>
       <li><a href="https://www.alt.gov.cn/lyalt/004001/20251016/67c5ddae-22cc-41ca-8e44-9415a82f805f.html" target="_blank" rel="noopener">新疆冬季景区优惠政策（阿勒泰市政府 2025-10-15）：赛里木湖 2025/10/16–2026/3/15 门票半价 35 元/人；温泉县住宿满 180 元发票免本人门票（须先住后从北门进）</a></li>
       <li><a href="http://www.altxw.com/gg/202510/t20251023_31214558.html" target="_blank" rel="noopener">阿禾公路冬季通行通告（阿勒泰公安+文旅+交通三局）：冬季模式为每年 10/16–次年 5/14，阿勒泰—禾木 10:00–14:00 双向、阿勒泰—野卡峡 10:00–17:00，当天 20:00 前驶离；仅限装雪地胎的 7 座以下（含 7 座）四驱越野车；全线 209.45 km 无加油站。2026–2027 季自 2026/10/16 起执行（中新网 2026-10-20 报道）</a></li>
@@ -888,10 +888,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
       <div class="note-sec">
         <div class="note-sec__title">钱怎么算</div>
         <ul class="note-sec__list">
-          <li><b>机票各买各的</b>：三条腿（深圳去/回、长沙去/回）谁买的算谁的，不进平摊；票价以购票时为准。</li>
-          <li><b>一起花的钱</b>：这趟由{{payer}}统一刷卡，{{others}}事后各转一笔，不用{{peopleCN}}个人互相追账。</li>
+          <li><b>机票三人公摊</b>：三条腿（深圳去/回、长沙去/回）一起买、三人平摊；含税实价出单后并入合计，票价以购票时为准。</li>
+          <li><b>一起花的钱</b>：这趟由{{payer}}统一刷卡垫付，出发前每人先预交 ¥10,000，多退少补，行程结束统一对账结算。</li>
           <li><b>估算项</b>：油费、过路费、餐费、门票区间车是估的，以实际花出去的为准。</li>
-          <li><b>住宿价</b>：14 晚都是携程 12 月实际日期报价（含税、三间大床口径），不是拍脑袋估的。民宿旺季和元旦前后会浮动，以预订当天锁定的价为准 —— 公开页面只能查到区间，选日期后的锁定价要登录才看得到。</li>
+          <li><b>住宿价</b>：14 晚都是携程 12 月实际日期报价（含税、按三间大床算），不是拍脑袋估的。民宿旺季和元旦前后会浮动，以预订当天确认的价为准 —— 公开页面只能查到区间，选日期后的确认价要登录才看得到。</li>
           <li><b>票根</b>：喀纳斯全域票三天有效，二次检票要查；订单和票面离线存好，丢了要重买。</li>
         </ul>
       </div>
@@ -932,7 +932,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 const CONFIG = {
   people: 3,
   members: ['刘总','熊大','怡哥'],
-  payer: '怡哥'
+  payer: '熊大'
 };
 /*DATA:CONFIG:END*/
 const CN_NUM = ['零','一','二','三','四','五','六','七','八','九','十'];
@@ -1056,7 +1056,7 @@ const spots = [
   {name:'吉克普林初学雪场',region:'阿勒泰·禾木',desc:'D4 下午 A 案纯初学：初级魔毯区，三人各 1V1 教练 2h；不买观光缆车。26–27 雪票/教练/租赁价为 L3 媒体转发待升 L1；只上初级道/魔毯，不碰中高级道。电话 400-004-5800。⚠️ 机票免费滑雪只认落地 AAT/BKZ/FYN 三机场登机牌，本行程落地 URC、免费额度 0；免费票亦不含雪具/教练，不可套用。',img:null,ref:'实景图待采（吉克普林雪场无旧图可复用）',book:'现场/小程序购票；价目待核',bookUrl:'https://www.xjalt.gov.cn/govxxgk/DD001/2025-11-12/1ed81147-2373-4340-8a3d-9c23d113e623.html',ll:[48.605,87.5522],imgSource:'待采：本地无同景区已入库实拍；公网免登录图为新华社/付费图库版权素材，按真实性与版权底线不套用通用雪山素材；待2026冬季现场实拍或取得授权图后补齐。',coordSource:'高德 POI「禾木(吉克普林)国际滑雪度假区北门」87.552169,48.604977；抖音 48.586737,87.558713 互证；电话 400-004-5800 一致',coordPrecision:'area'},
   {name:'喀纳斯三湾',region:'阿勒泰·喀纳斯',desc:'D5 午后栈道顺光：神仙湾、月亮湾、卧龙湾依次排开，区间车有停靠点。12 月初河面冰封、主河道仍碧绿，两岸松枝挂雾凇；雪盖河湾大半，别按秋天彩色河湾期待。',img:'assets/spot_sanwan.jpg',ref:'同景区历史素材（三湾，非2026冬季现场）',book:'官方渠道：小程序「喀纳斯景区」「原行网」',bookUrl:'https://kns.gov.cn/005/005002/20251023/9b6b36ac-c16d-4b28-84a6-dda609d72f5c.html',ll:[48.64093,87.045609],imgSource:'同景区历史素材（三湾，非2026冬季现场）',coordSource:'旧版历史轨迹点位（三湾栈道，同片区）',coordPrecision:'area'},
   {name:'喀纳斯湖沿岸·新村',region:'阿勒泰·喀纳斯',desc:'D6 全天深度：湖沿岸、新村慢游与周边栈道。观鱼台 2026-10-07 起季节性关闭、徒步线路同步停开，不要排。湖岸远观即可，不靠近临水/临崖/冰面区域，严禁滑野雪、走野道。',img:'assets/spot_kanas.jpg',ref:'同景区历史素材（喀纳斯湖片区，非2026冬季现场）',book:'含全域票',bookUrl:'https://kns.gov.cn/005/005002/20251023/9b6b36ac-c16d-4b28-84a6-dda609d72f5c.html',ll:[48.786223,87.057447],imgSource:'同景区历史素材（喀纳斯湖片区，非2026冬季现场）',coordSource:'旧版历史轨迹点位（喀纳斯湖片区）',coordPrecision:'area'},
-  {name:'白哈巴村(A准备/B兜底)',region:'阿勒泰·喀纳斯',desc:'D7 力争当日往返：边防证+限量免费预约+当日雪情三条件齐备才走，09:00 换乘中心出发、15:30 返；区间车往返 ¥45/人 fallback 或自驾指定区域。任一不满足留喀纳斯村内深度；不住一晚。',img:'assets/spot_baihaba.jpg',ref:'同景区历史素材（白哈巴村，非2026冬季现场）',book:'边防证+景区预约；全域票含白哈巴',bookUrl:'https://kns.gov.cn/005/005002/20251023/9b6b36ac-c16d-4b28-84a6-dda609d72f5c.html',ll:[48.6935,86.7839],imgSource:'同景区历史素材（白哈巴村，非2026冬季现场）',coordSource:'高德 POI「白哈巴景区」86.783913,48.693499；地形图 48.673–48.713/86.762–86.802 互证',coordPrecision:'area'},
+  {name:'白哈巴村',region:'阿勒泰·喀纳斯',desc:'D7 力争当日往返：边防证+限量免费预约+当日雪情三条件齐备才走，09:00 换乘中心出发、15:30 返；区间车往返 ¥45/人 作为备选，或自驾指定区域。任一不满足留喀纳斯村内深度；不住一晚。',img:'assets/spot_baihaba.jpg',ref:'同景区历史素材（白哈巴村，非2026冬季现场）',book:'边防证+景区预约；全域票含白哈巴',bookUrl:'https://kns.gov.cn/005/005002/20251023/9b6b36ac-c16d-4b28-84a6-dda609d72f5c.html',ll:[48.6935,86.7839],imgSource:'同景区历史素材（白哈巴村，非2026冬季现场）',coordSource:'高德 POI「白哈巴景区」86.783913,48.693499；地形图 48.673–48.713/86.762–86.802 互证',coordPrecision:'area'},
   {name:'五彩滩日落',region:'布尔津',desc:'D9 傍晚。额尔齐斯河北岸雅丹彩丘，日落 18:15，日落前 1h（17:15 前）到观景台侧光最佳。淡季 22 元/人；现场购票无在线预约。',img:'assets/spot_wucaotan.jpg',ref:'同景区历史素材（五彩滩，非2026冬季现场）',book:'现场购票',bookUrl:'https://www.brj.gov.cn/lybej/006018/20261008/e49f5b6b-efad-45ba-a711-7d98cfa1c132.html',ll:[47.8375,86.6807],imgSource:'同景区历史素材（五彩滩，非2026冬季现场）',coordSource:'高德 POI「布尔津五彩滩」86.680702,47.837537；bigemap 86.682389,47.836555 互证',coordPrecision:'area'},
   {name:'乌尔禾魔鬼城雪景',region:'克拉玛依',desc:'D10 下午。雪盖雅丹远观最好看；售票 09:30–19:00、19:00 停售，咨询 0990-6964701。风大崖边结冰别往边上站。',img:'assets/spot_ghostcity.jpg',ref:'同景区历史素材（魔鬼城，非2026冬季现场）',book:'现场购票',bookUrl:'http://www.weh.gov.cn/weh/ly1/202610/c83d45a81b6947989a5c0374886df24d.shtml',ll:[46.183,85.833],imgSource:'同景区历史素材（魔鬼城，非2026冬季现场）',coordSource:'旧版历史轨迹点位（世界魔鬼城，同片区）',coordPrecision:'area'},
   {name:'赛里木湖冰推·冰裂',region:'博州',desc:'D11 下午环湖 + D12 上午晨景。12 月上旬仅冰推冰裂，成片蓝冰要 1 月中下旬，不抱蓝冰预期。海拔约 2,073m 慢走；白毛风能见度骤降听从管制、不强穿环湖、不走夜路；切勿私自下冰。',img:'assets/spot_sayram.jpg',ref:'同景区历史素材（赛里木湖蓝冰/冰面，冰推冰裂形态以现场为准）',book:'在线预约门票；自驾按车 120/5座以下',bookUrl:'https://h5.visitor.xjslmhlt.cn/',ll:[44.601187,81.392048],imgSource:'同景区历史素材（赛里木湖蓝冰/冰面，冰推冰裂形态以现场为准）',coordSource:'旧版历史轨迹点位（赛湖东门片区；环湖全程 92km，点位代表东岸入口）',coordPrecision:'area'},
@@ -1071,14 +1071,14 @@ const spots = [
 /*DATA:hotels:START —— tools/build_v2.py 从 trip-14n-v2.json 生成，勿手改*/
 const hotels = [
   {name:'温德姆花园(天山国际机场店)',ll:[43.932148,87.530327],geo:'area',addr:'新市区北京北路3366号6号楼商业101室',tel:'0991-6579999 / 18690893699',price:'尔雅浴缸大床 ¥365；三间/晚 ¥1,095（12/5 实价）',hours:'14:00 后入住 / 12:00 前退房；不收押金',img:null,imgs:[],score:['4.6分','828条'],tags:['2025开业','免费班车接送机','2份早/间'],warn:'D1 晚。距机场携程 5.1km、官网写 3km（两源不一致，点评车程约15min）；2份早/间，加早成人¥69/人；差评提示园区装修破烂感、隔音弱；不可加床。⚠️ 实拍照待采；坐标来源见 coordSource，门牌精度以现场为准。',ref:'携程详情页↗',refUrl:'https://hotels.ctrip.com/hotels/130240722.html',ctripId:'130240722',nights:['D1'],breakfast:'2份/间（共6）',coordSource:'地图地址级 geocode：北京北路3366号（终点 POI 解析）',coordPrecision:'street',imgSource:'待采：本地无同店已入库实拍；携程/点评/同程平台图需登录态或动态加载、自动化不可取；公网免登录图为付费图库/官媒版权素材，按真实性与版权底线不套用同片区其他商户图；待2026冬季现场实拍或取得授权图后补齐。'},
-  {name:'金桥假日(将军山滑雪场店)',ll:[47.827,88.132603],geo:'street',addr:'阿勒泰解放路1号',tel:'0906-2171111',price:'惠享大床 ¥372；三间/晚 ¥1,116（12/6 实价）',hours:'24h 前台；退房 14:00 前；需押金',img:'assets/hotel_jinqiao.jpg',imgs:[],score:['4.6分','724条'],tags:['暖气','2份早/间','库存4'],warn:'D2 晚。距将军山雪场近；2份早/间；库存4；23:59 前免费取消；页面没写供暖情况，需电话确认；不可带宠物。⚠️ ll 旧值 47.827,88.132603 可参照待复核、实拍照待采。 坐标：旧十天同店坐标复用（待现场复核）（street）。',ref:'携程详情页↗',refUrl:'https://hotels.ctrip.com/hotels/2140187.html',ctripId:'2140187',nights:['D2'],breakfast:'2份/间（共6）',coordSource:'旧十天同店坐标复用（待现场复核）',coordPrecision:'street',imgSource:'同店历史素材（旧十天版本本店实拍，非2026冬季现场）'},
+  {name:'金桥假日(将军山滑雪场店)',ll:[47.827,88.132603],geo:'street',addr:'阿勒泰解放路1号',tel:'0906-2171111',price:'惠享大床 ¥372；三间/晚 ¥1,116（12/6 实价）',hours:'24h 前台；退房 14:00 前；需押金',img:'assets/hotel_jinqiao.jpg',imgs:['assets/hotel_jinqiao.jpg','assets/hotel_jinqiao_1.jpg','assets/hotel_jinqiao_2.jpg','assets/hotel_jinqiao_3.jpg','assets/hotel_jinqiao_4.jpg'],score:['4.6分','724条'],tags:['暖气','2份早/间','库存4'],warn:'D2 晚。距将军山雪场近；2份早/间；库存4；23:59 前免费取消；页面没写供暖情况，需电话确认；不可带宠物。⚠️ ll 旧值 47.827,88.132603 可参照待复核、实拍照待采。 坐标：旧十天同店坐标复用（待现场复核）（street）。',ref:'携程详情页↗',refUrl:'https://hotels.ctrip.com/hotels/2140187.html',ctripId:'2140187',nights:['D2'],breakfast:'2份/间（共6）',coordSource:'旧十天同店坐标复用（待现场复核）',coordPrecision:'street',imgSource:'同店历史素材（旧十天版本本店实拍，非2026冬季现场）'},
   {name:'禾木裸心隐乡',ll:[48.565376,87.433311],geo:'door',addr:'布尔津也禾段禾木风景区东哈拉76号',tel:'18199991523 / 0906-6393888',price:'观景大床 ¥2,278/晚；三间/晚 ¥6,834（2晚 ¥13,668）',hours:'村内换乘摆渡车：1号→桥头→3号→白桦林站→步行50米',img:null,imgs:[],score:['4.8分','279条'],tags:['2024开业','地暖','俯瞰全村','成人免费不限份早'],warn:'D3/D4 连住。⚠️ 不可取消 + 需等 12h 确认；同层待电话确认；村内需换乘摆渡车；冬季开园时间页面自相矛盾（9:00–20:00 vs 10:00–18:00）。早券成人免费不限份。⚠️ 实拍照待采；坐标来源见 coordSource，门牌精度以现场为准。',ref:'携程详情页↗',refUrl:'https://hotels.ctrip.com/hotels/117023096.html',ctripId:'117023096',nights:['D3','D4'],breakfast:'成人免费不限份',coordSource:'地图 geocode：东哈拉76号（终点 POI 解析）',coordPrecision:'door',imgSource:'待采：本地无同店已入库实拍；携程/点评/同程平台图需登录态或动态加载、自动化不可取；公网免登录图为付费图库/官媒版权素材，按真实性与版权底线不套用同片区其他商户图；待2026冬季现场实拍或取得授权图后补齐。'},
-  {name:'停泊STAY·坐忘',ll:[48.698999,87.00435],geo:'door',addr:'布尔津哈纳斯村观鱼台路西八巷02号',tel:'13899407638',price:'坐云观景大床 ¥1,872/晚；三间/晚 ¥5,616（2晚 ¥11,232）',hours:'前台 08:00–23:30（非24h）；入住截至 22:00',img:'assets/hotel_tingbo.jpg',imgs:[],score:['4.9分','369条'],tags:['雪山草场','暖气','2份早/间'],warn:'D5/D6 连住。2份早/间，加第3份 ¥199/人；库存3；12/06 23:59 前免费取消；无电视、无烘干机；电热水器。⚠️ ll 旧值 48.698999,87.00435 同店可复用、实拍照待采。 坐标：旧十天同店坐标复用（door）。',ref:'携程详情页↗',refUrl:'https://hotels.ctrip.com/hotels/132224259.html',ctripId:'132224259',nights:['D5','D6'],breakfast:'2份/间（共6）；第3份¥199/人',coordSource:'旧十天同店坐标复用',coordPrecision:'door',imgSource:'同店历史素材（旧十天版本本店实拍，非2026冬季现场）'},
+  {name:'停泊STAY·坐忘',ll:[48.698999,87.00435],geo:'door',addr:'布尔津哈纳斯村观鱼台路西八巷02号',tel:'13899407638',price:'坐云观景大床 ¥1,872/晚；三间/晚 ¥5,616（2晚 ¥11,232）',hours:'前台 08:00–23:30（非24h）；入住截至 22:00',img:'assets/hotel_tingbo.jpg',imgs:['assets/hotel_tingbo.jpg','assets/hotel_tingbo_1.jpg','assets/hotel_tingbo_2.jpg','assets/hotel_tingbo_3.jpg','assets/hotel_tingbo_4.jpg'],score:['4.9分','369条'],tags:['雪山草场','暖气','2份早/间'],warn:'D5/D6 连住。2份早/间，加第3份 ¥199/人；库存3；12/06 23:59 前免费取消；无电视、无烘干机；电热水器。⚠️ ll 旧值 48.698999,87.00435 同店可复用、实拍照待采。 坐标：旧十天同店坐标复用（door）。',ref:'携程详情页↗',refUrl:'https://hotels.ctrip.com/hotels/132224259.html',ctripId:'132224259',nights:['D5','D6'],breakfast:'2份/间（共6）；第3份¥199/人',coordSource:'旧十天同店坐标复用',coordPrecision:'door',imgSource:'同店历史素材（旧十天版本本店实拍，非2026冬季现场）'},
   {name:'安遇·ANYU 旷野',ll:[48.687919,87.00733],geo:'door',addr:'布尔津哈纳斯村响泉路1号(新村第七站)',tel:'18119050027 / 18703038880',price:'星邻榻榻米¥987 + 牧野山景¥1,303 + 牧云雪山景¥1,513；三间/晚 ¥3,803（2晚 ¥7,606）',hours:'密码入住；需前往特定地点办理入住',img:null,imgs:[],score:['4.8分','326条'],tags:['2023开业','独院平房1层天然同层','全屋地暖','2份早/间'],warn:'D7/D8 连住。三间大床各1间混订；成人早 ¥58/人；停车场未标免费 ⚠️；不可带宠物；12/4 前免费取消。⚠️ 实拍照待采；坐标来源见 coordSource，门牌精度以现场为准。',ref:'携程详情页↗',refUrl:'https://hotels.ctrip.com/hotels/110198836.html',ctripId:'110198836',nights:['D7','D8'],breakfast:'2份/间（共6）；加早¥58/人',coordSource:'同村响泉路参照（崇野集旧点）；地图 geocode 误匹配到布尔津县城 47.701,86.874 已弃用',coordPrecision:'area',imgSource:'待采：本地无同店已入库实拍；携程/点评/同程平台图需登录态或动态加载、自动化不可取；公网免登录图为付费图库/官媒版权素材，按真实性与版权底线不套用同片区其他商户图；待2026冬季现场实拍或取得授权图后补齐。'},
-  {name:'知禾·设计师艺术民宿(额尔齐斯河店)',ll:[47.694121,86.873797],geo:'door',addr:'布尔津卧龙湾路酒吧一条街2号楼',tel:'15009067506',price:'晴岚舒适大床 ¥440；三间/晚 ¥1,320',hours:'16:00 后入住 / 14:00 前退房；不收押金',img:'assets/hotel_zhihe.jpg',imgs:[],score:['4.7分','346条'],tags:['2025开业','额尔齐斯河畔','设计感','成人免费不限份早'],warn:'D9 晚。库存4；成人免费不限份早；政府报道43间 vs 携程41间（两源差2）；同街备选深山见·北山下 4.8/734/¥346。⚠️ ll 旧值 47.694121,86.873797 同店可复用、实拍照待采。 坐标：旧十天同店坐标复用（door）。',ref:'携程详情页↗',refUrl:'https://hotels.ctrip.com/hotels/131639186.html',ctripId:'131639186',nights:['D9'],breakfast:'成人免费不限份',coordSource:'旧十天同店坐标复用',coordPrecision:'door',imgSource:'同店历史素材（旧十天版本本店实拍，非2026冬季现场）'},
-  {name:'独山子玛依塔柯酒店',ll:[44.329022,84.88688],geo:'street',addr:'独山子大庆东路13号',tel:'0992-3886888',price:'油城景观大床 ¥305(2早档)；三间/晚 ¥915',hours:'18:00 前免费取消；早餐 08:30–10:00、¥48/人',img:'assets/hotel_maitake.jpg',imgs:[],score:['4.5分','496条'],tags:['2007开业/2010装修','集中供暖','免费停车'],warn:'D10 晚。库存3；⚠️ 勿误选 ¥296（仅1早+不可取消）；全房型标可吸烟；差评提示餐具茶渍没消毒、窗玻璃糟糕；独库零起点携程标2.5km vs 简介"起点"矛盾待实地核。⚠️ ll 旧值 44.329022,84.88688 同店可复用、实拍照待采。 坐标：旧十天同店坐标复用（street）。',ref:'携程详情页↗',refUrl:'https://hotels.ctrip.com/hotels/699198.html',ctripId:'699198',nights:['D10'],breakfast:'2份/间（共6）；加早¥48/人',coordSource:'旧十天同店坐标复用',coordPrecision:'street',imgSource:'同店历史素材（旧十天版本本店实拍，非2026冬季现场）'},
-  {name:'赛里木湖逸扉酒店',ll:[44.608595,81.118984],geo:'area',addr:'博乐赛湖景区西海路7号塔玛瑕尔集群2号楼',tel:'0909-2272777',price:'高级湖景大床 ¥576；三间/晚 ¥1,728',hours:'16:00 后入住；仅限 18–99 岁',img:'assets/hotel_yifei.jpg',imgs:[],score:['4.7分','522条'],tags:['2026开业','景区内','1份早/间'],warn:'D11 晚。3间各1份＝3份正好够、不需补早；库存3；⚠️ 无空调、地暖可能不足（住客实录员工主动升两级房型）；差评提示烟味/花园垃圾/床靠背灰。⚠️ ll 旧值 44.608595,81.118984 同店可复用、实拍照待采。 坐标：旧十天同店坐标复用（area）。',ref:'携程详情页↗',refUrl:'https://hotels.ctrip.com/hotels/133417535.html',ctripId:'133417535',nights:['D11'],breakfast:'1份/间（共3正好够）',coordSource:'旧十天同店坐标复用',coordPrecision:'area',imgSource:'同店历史素材（旧十天版本本店实拍，非2026冬季现场）'},
-  {name:'温泉花间堂·阿日相',ll:[44.977348,81.031349],geo:'area',addr:'温泉县环山路2号',tel:'18129092200 / 18129099478',price:'云霄半山私汤单卧别墅108㎡ ¥2,028(无早)/¥2,118(1早)；三间/晚 ¥6,084',hours:'须提前1天电话；仅限 18–70 岁',img:'assets/hotel_huajiantang.jpg',imgs:[],score:['4.7分','599条'],tags:['2024开业','独栋别墅','无早'],warn:'D12 晚。无早(0份)，加早 ¥98/人×3=¥294；库存4限3间；⚠️ 云霄半山"私汤"是否入户未证实（同店"水泱湿地私汤别墅"才明写私人温泉）；赠双人下午茶/花间食双人正餐/赛湖自驾套票2份。⚠️ ll 旧值 44.981236,81.036499 在博格达尔景区、新址环山路2号需复核；实拍照待采。 坐标：地图 geocode：环山路2号片区（旧点 44.9812,81.0365 在博格达尔景区，新址差约0.6km，待现场复核）（area）。',ref:'携程详情页↗',refUrl:'https://hotels.ctrip.com/hotels/123512763.html',ctripId:'123512763',nights:['D12'],breakfast:'无早(0份)；加早¥98/人',coordSource:'地图 geocode：环山路2号片区（旧点 44.9812,81.0365 在博格达尔景区，新址差约0.6km，待现场复核）',coordPrecision:'area',imgSource:'同店历史素材（旧十天版本本店实拍，非2026冬季现场）'},
+  {name:'知禾·设计师艺术民宿(额尔齐斯河店)',ll:[47.694121,86.873797],geo:'door',addr:'布尔津卧龙湾路酒吧一条街2号楼',tel:'15009067506',price:'晴岚舒适大床 ¥440；三间/晚 ¥1,320',hours:'16:00 后入住 / 14:00 前退房；不收押金',img:'assets/hotel_zhihe.jpg',imgs:['assets/hotel_zhihe.jpg','assets/hotel_zhihe_1.jpg','assets/hotel_zhihe_2.jpg','assets/hotel_zhihe_3.jpg','assets/hotel_zhihe_4.jpg'],score:['4.7分','346条'],tags:['2025开业','额尔齐斯河畔','设计感','成人免费不限份早'],warn:'D9 晚。库存4；成人免费不限份早；政府报道43间 vs 携程41间（两源差2）；同街备选深山见·北山下 4.8/734/¥346。⚠️ ll 旧值 47.694121,86.873797 同店可复用、实拍照待采。 坐标：旧十天同店坐标复用（door）。',ref:'携程详情页↗',refUrl:'https://hotels.ctrip.com/hotels/131639186.html',ctripId:'131639186',nights:['D9'],breakfast:'成人免费不限份',coordSource:'旧十天同店坐标复用',coordPrecision:'door',imgSource:'同店历史素材（旧十天版本本店实拍，非2026冬季现场）'},
+  {name:'独山子玛依塔柯酒店',ll:[44.329022,84.88688],geo:'street',addr:'独山子大庆东路13号',tel:'0992-3886888',price:'油城景观大床 ¥305(2早档)；三间/晚 ¥915',hours:'18:00 前免费取消；早餐 08:30–10:00、¥48/人',img:'assets/hotel_maitake.jpg',imgs:['assets/hotel_maitake.jpg','assets/hotel_maitake_1.jpg','assets/hotel_maitake_2.jpg','assets/hotel_maitake_3.jpg','assets/hotel_maitake_4.jpg'],score:['4.5分','496条'],tags:['2007开业/2010装修','集中供暖','免费停车'],warn:'D10 晚。库存3；⚠️ 勿误选 ¥296（仅1早+不可取消）；全房型标可吸烟；差评提示餐具茶渍没消毒、窗玻璃糟糕；独库零起点携程标2.5km vs 简介"起点"矛盾待实地核。⚠️ ll 旧值 44.329022,84.88688 同店可复用、实拍照待采。 坐标：旧十天同店坐标复用（street）。',ref:'携程详情页↗',refUrl:'https://hotels.ctrip.com/hotels/699198.html',ctripId:'699198',nights:['D10'],breakfast:'2份/间（共6）；加早¥48/人',coordSource:'旧十天同店坐标复用',coordPrecision:'street',imgSource:'同店历史素材（旧十天版本本店实拍，非2026冬季现场）'},
+  {name:'赛里木湖逸扉酒店',ll:[44.608595,81.118984],geo:'area',addr:'博乐赛湖景区西海路7号塔玛瑕尔集群2号楼',tel:'0909-2272777',price:'高级湖景大床 ¥576；三间/晚 ¥1,728',hours:'16:00 后入住；仅限 18–99 岁',img:'assets/hotel_yifei.jpg',imgs:['assets/hotel_yifei.jpg','assets/hotel_yifei_1.jpg','assets/hotel_yifei_2.jpg','assets/hotel_yifei_3.jpg','assets/hotel_yifei_4.jpg'],score:['4.7分','522条'],tags:['2026开业','景区内','1份早/间'],warn:'D11 晚。3间各1份＝3份正好够、不需补早；库存3；⚠️ 无空调、地暖可能不足（住客实录员工主动升两级房型）；差评提示烟味/花园垃圾/床靠背灰。⚠️ ll 旧值 44.608595,81.118984 同店可复用、实拍照待采。 坐标：旧十天同店坐标复用（area）。',ref:'携程详情页↗',refUrl:'https://hotels.ctrip.com/hotels/133417535.html',ctripId:'133417535',nights:['D11'],breakfast:'1份/间（共3正好够）',coordSource:'旧十天同店坐标复用',coordPrecision:'area',imgSource:'同店历史素材（旧十天版本本店实拍，非2026冬季现场）'},
+  {name:'温泉花间堂·阿日相',ll:[44.977348,81.031349],geo:'area',addr:'温泉县环山路2号',tel:'18129092200 / 18129099478',price:'云霄半山私汤单卧别墅108㎡ ¥2,028(无早)/¥2,118(1早)；三间/晚 ¥6,084',hours:'须提前1天电话；仅限 18–70 岁',img:'assets/hotel_huajiantang.jpg',imgs:['assets/hotel_huajiantang.jpg','assets/hotel_huajiantang_1.jpg','assets/hotel_huajiantang_2.jpg','assets/hotel_huajiantang_3.jpg','assets/hotel_huajiantang_4.jpg'],score:['4.7分','599条'],tags:['2024开业','独栋别墅','无早'],warn:'D12 晚。无早(0份)，加早 ¥98/人×3=¥294；库存4限3间；⚠️ 云霄半山"私汤"是否入户未证实（同店"水泱湿地私汤别墅"才明写私人温泉）；赠双人下午茶/花间食双人正餐/赛湖自驾套票2份。⚠️ ll 旧值 44.981236,81.036499 在博格达尔景区、新址环山路2号需复核；实拍照待采。 坐标：地图 geocode：环山路2号片区（旧点 44.9812,81.0365 在博格达尔景区，新址差约0.6km，待现场复核）（area）。',ref:'携程详情页↗',refUrl:'https://hotels.ctrip.com/hotels/123512763.html',ctripId:'123512763',nights:['D12'],breakfast:'无早(0份)；加早¥98/人',coordSource:'地图 geocode：环山路2号片区（旧点 44.9812,81.0365 在博格达尔景区，新址差约0.6km，待现场复核）',coordPrecision:'area',imgSource:'同店历史素材（旧十天版本本店实拍，非2026冬季现场）'},
   {name:'美豪丽致(国际大巴扎南门地铁站店)',ll:[43.796513,87.620781],geo:'street',addr:'天山区解放北路215号',tel:'0991-7610000 / 0991-7670000',price:'雅致智能大床 ¥313；三间/晚 ¥939（2晚 ¥1,878）',hours:'15:00 后入住 / 14:00 前退房；专属停车场免费',img:null,imgs:[],score:['4.6分','1,174条'],tags:['2025开业','地铁440m','按摩室+足浴','2份早/间'],warn:'D13/D14 连住。库存6；自带按摩室+足浴；南门地铁440m；⚠️ 全房型可吸烟须备注无烟；差评提示洗澡间漏水/吹风机连坏/按键失灵；距机场携程22.3km；¥313 为11-15读数，下单日复核当日价。⚠️ 实拍照待采；坐标来源见 coordSource，门牌精度以现场为准。',ref:'携程详情页↗',refUrl:'https://hotels.ctrip.com/hotels/130511695.html',ctripId:'130511695',nights:['D13','D14'],breakfast:'2份/间（共6）',coordSource:'地图 geocode：店名命中「美豪丽致酒店」',coordPrecision:'street',imgSource:'待采：本地无同店已入库实拍；携程/点评/同程平台图需登录态或动态加载、自动化不可取；公网免登录图为付费图库/官媒版权素材，按真实性与版权底线不套用同片区其他商户图；待2026冬季现场实拍或取得授权图后补齐。'}
 ];
 /*DATA:hotels:END*/;
@@ -1153,21 +1153,21 @@ const restaurants = [
   {dish:'八秒拼盘',votes:3},
   {dish:'60℃低温水浸高白鲑',votes:2}
 ],distance:{from:'逸扉',km:0.86,min:2,method:'地图驾车实测（步行约 12min）'},booking:{type:'可预订（无包厢）',tel:['19000638765'],telStatus:'外呼未验证（本轮不打电话）',evidence:'店页明写「可预订」「无包厢」'},status:'营业中（平台状态位）',risks:['渔火锅按斤/按份，鱼重决定总价','冬季是否全开未电话确认（本条是 7 项待核之一）'],shopId:'l2JafzLuiNfYKmVf',coordSource:'逸扉同集群参照；地图库东岸 POI 44.6187,81.3873 与实测 0.86km 冲突已弃用，集群内精确门牌待核',coordPrecision:'area'},
-  {name:'旺福楼酒店（温泉店）',ll:[44.973197,81.030711],geo:'area',addr:'孟克特街与团结路交叉口东约 200m',tel:'0909-8223888',price:'人均72',hours:'11:00–23:00',img:'assets/restaurants-14n/food_wangfulou.jpg',imgs:['assets/restaurants-14n/food_wangfulou.jpg','assets/restaurants-14n/food_wangfulou_1.jpg'],score:['点评4.3','301条'],tags:['孟克特北路美食热门榜第4'],warn:'温泉县城内评分最高且份数刚好过 A 轨（4.3/301）；铜锅奶茶 25 人推荐是本地特色，县城馆子晚间多早收，这家开到 23:00 是最稳的兜底。风险：县城馆子冬季可能提前收档，建议 20:30 前到；花间堂住客也可选酒店内膳祥餐厅作为等同主选 坐标：旧十天同店坐标复用（street）。',ref:'大众点评↗',refUrl:'https://m.dianping.com/shop/H9HMlSjpf7GPTcaz',key:'wangfulou',dayts:['D12'],role:'main',meal:['晚'],signature:[
+  {name:'旺福楼酒店（温泉店）',ll:[44.973197,81.030711],geo:'area',addr:'孟克特街与团结路交叉口东约 200m',tel:'0909-8223888',price:'人均72',hours:'11:00–23:00',img:'assets/restaurants-14n/food_wangfulou.jpg',imgs:['assets/restaurants-14n/food_wangfulou.jpg','assets/restaurants-14n/food_wangfulou_1.jpg','assets/restaurants-14n/food_wangfulou_2.jpg','assets/restaurants-14n/food_wangfulou_3.jpg','assets/restaurants-14n/food_wangfulou_4.jpg'],score:['点评4.3','301条'],tags:['孟克特北路美食热门榜第4'],warn:'温泉县城内评分最高且份数刚好过 A 轨（4.3/301）；铜锅奶茶 25 人推荐是本地特色，县城馆子晚间多早收，这家开到 23:00 是最稳的兜底。风险：县城馆子冬季可能提前收档，建议 20:30 前到；花间堂住客也可选酒店内膳祥餐厅作为等同主选 坐标：旧十天同店坐标复用（street）。',ref:'大众点评↗',refUrl:'https://m.dianping.com/shop/H9HMlSjpf7GPTcaz',key:'wangfulou',dayts:['D12'],role:'main',meal:['晚'],signature:[
   {dish:'铜锅奶茶',votes:25},
   {dish:'农家跑地鸡',votes:14},
   {dish:'胡辣羊蹄',votes:12},
   {dish:'蘸汁皮冻',votes:11},
   {dish:'炝炒毛白菜',votes:7}
 ],distance:{from:'花间堂·阿日相',km:1.8,min:5,method:'地图驾车实测'},booking:{type:'现场取号（可订包间）',tel:['0909-8223888'],telStatus:'外呼未验证（本轮不打电话）',evidence:'—'},status:'营业中（平台状态位）',risks:['县城馆子冬季可能提前收档，建议 20:30 前到','花间堂住客也可选酒店内膳祥餐厅作为等同主选'],shopId:'H9HMlSjpf7GPTcaz',coordSource:'旧十天同店坐标复用',coordPrecision:'street'},
-  {name:'馬风花·新疆菜·大盘鸡（人民电影院店）',ll:[43.798587,87.616025],geo:'area',addr:'建设路 234 号 成基大厦 1 楼底商（近地铁 1 号线北门站 C 口 540m）',tel:'0991-2333222',price:'人均50',hours:'12:00 开始营业',img:'assets/restaurants-14n/food_mafenghua.jpg',imgs:['assets/restaurants-14n/food_mafenghua.jpg','assets/restaurants-14n/food_mafenghua_1.jpg','assets/restaurants-14n/food_mafenghua_2.jpg'],score:['点评4.7','15235条'],tags:['乌鲁木齐美食热门榜第1'],warn:'15,235 条、4.7 分、乌鲁木齐美食热门榜第 1，人均仅 50——最后一晚只有它能把「全城第一 + 走路就到 + 便宜」同时满足；与机场店是两套数据，不可互代。风险：取号候位 182 人，18:00 后到店要等很久；12:00 才开，午市不要早到 坐标：旧十天同店坐标复用（street）。',ref:'大众点评↗',refUrl:'https://m.dianping.com/shop/l87PzE1sWwA03Rgo',key:'mafenghua',dayts:['D13','D14'],role:'main',meal:['晚'],signature:[
+  {name:'馬风花·新疆菜·大盘鸡（人民电影院店）',ll:[43.798587,87.616025],geo:'area',addr:'建设路 234 号 成基大厦 1 楼底商（近地铁 1 号线北门站 C 口 540m）',tel:'0991-2333222',price:'人均50',hours:'12:00 开始营业',img:'assets/restaurants-14n/food_mafenghua.jpg',imgs:['assets/restaurants-14n/food_mafenghua.jpg','assets/restaurants-14n/food_mafenghua_1.jpg','assets/restaurants-14n/food_mafenghua_2.jpg','assets/restaurants-14n/food_mafenghua_3.jpg','assets/restaurants-14n/food_mafenghua_4.jpg'],score:['点评4.7','15235条'],tags:['乌鲁木齐美食热门榜第1'],warn:'15,235 条、4.7 分、乌鲁木齐美食热门榜第 1，人均仅 50——最后一晚只有它能把「全城第一 + 走路就到 + 便宜」同时满足；与机场店是两套数据，不可互代。风险：取号候位 182 人，18:00 后到店要等很久；12:00 才开，午市不要早到 坐标：旧十天同店坐标复用（street）。',ref:'大众点评↗',refUrl:'https://m.dianping.com/shop/l87PzE1sWwA03Rgo',key:'mafenghua',dayts:['D13','D14'],role:'main',meal:['晚'],signature:[
   {dish:'新疆大盘鸡',votes:460},
   {dish:'缸子肉',votes:222},
   {dish:'沙葱炒鸡蛋',votes:196},
   {dish:'碳烤羊肉串',votes:184},
   {dish:'酸奶冰',votes:169}
 ],distance:{from:'美豪丽致',km:1.0,min:4,method:'地图驾车实测（步行 13min）'},booking:{type:'现场取号',tel:['0991-2333222'],telStatus:'✅ 电话邦 2026-09-21 外呼准确',evidence:'店页取号候位人数 182'},status:'营业中（平台状态位）',risks:['取号候位 182 人，18:00 后到店要等很久','12:00 才开，午市不要早到'],shopId:'l87PzE1sWwA03Rgo',coordSource:'旧十天同店坐标复用',coordPrecision:'street'},
-  {name:'丝路有约·优雅新疆菜（万宴城店）',ll:[43.794474,87.621188],geo:'area',addr:'中山路 万宴城 二楼',tel:'19990123781',price:'人均93',hours:'**13:00 开始营业**（不是 11:00，D14 午市必须按 13:00 倒排）',img:'assets/restaurants-14n/food_siluyouyue.jpg',imgs:['assets/restaurants-14n/food_siluyouyue.jpg','assets/restaurants-14n/food_siluyouyue_1.jpg','assets/restaurants-14n/food_siluyouyue_2.jpg'],score:['点评4.6','9863条'],tags:['2026 年上榜餐厅'],warn:'返程日中午的正餐：369 道推荐菜、9,863 条，是全市「精致版新疆菜」的代表；只营业到 13:00 开门，正好卡在退房—还车—去机场的时间线上。风险：13:00 才开，去早了只能等；取号 227 人，建议 12:45 到店先取号 坐标：旧十天同店坐标复用（street）。',ref:'大众点评↗',refUrl:'https://m.dianping.com/shop/H9O822L7aXtkQW3m',key:'siluyouyue',dayts:['D14'],role:'main',meal:['午'],signature:[
+  {name:'丝路有约·优雅新疆菜（万宴城店）',ll:[43.794474,87.621188],geo:'area',addr:'中山路 万宴城 二楼',tel:'19990123781',price:'人均93',hours:'**13:00 开始营业**（不是 11:00，D14 午市必须按 13:00 倒排）',img:'assets/restaurants-14n/food_siluyouyue.jpg',imgs:['assets/restaurants-14n/food_siluyouyue.jpg','assets/restaurants-14n/food_siluyouyue_1.jpg','assets/restaurants-14n/food_siluyouyue_2.jpg','assets/restaurants-14n/food_siluyouyue_3.jpg','assets/restaurants-14n/food_siluyouyue_4.jpg'],score:['点评4.6','9863条'],tags:['2026 年上榜餐厅'],warn:'返程日中午的正餐：369 道推荐菜、9,863 条，是全市「精致版新疆菜」的代表；只营业到 13:00 开门，正好卡在退房—还车—去机场的时间线上。风险：13:00 才开，去早了只能等；取号 227 人，建议 12:45 到店先取号 坐标：旧十天同店坐标复用（street）。',ref:'大众点评↗',refUrl:'https://m.dianping.com/shop/H9O822L7aXtkQW3m',key:'siluyouyue',dayts:['D14'],role:'main',meal:['午'],signature:[
   {dish:'只用咸盐烤的羊肉串',votes:118},
   {dish:'小龙虾烤包子',votes:94},
   {dish:'黄油卡瓦斯',votes:58},
@@ -1180,15 +1180,15 @@ const restaurants = [
 /*DATA:restaurants:END*/;
 /*DATA:expenses:START —— tools/build_v2.py 从 trip-14n-v2.json 生成，勿手改*/
 const expenses = [
-  {cat:'机票（三人各买各的·不公摊）',items:[
-      {name:'深圳→乌市往返（熊大）',detail:'去程 UQ2616 12:35 落地 URC；返程 SC2325 08:15 飞，13:20 到宝安T3',amount:'参考',who:'熊大',nature:'查到·参考',ref:'起价未税见清单1.2；含税以下单当日为准',refUrl:'—'},
-      {name:'深圳→乌市往返（怡哥）',detail:'去程同 UQ2616；返程同 SC2325',amount:'参考',who:'怡哥',nature:'查到·参考',ref:'同上',refUrl:'—'},
-      {name:'长沙→乌市往返（刘总）',detail:'去程 CZ3467 14:00 落地 URC；返程 MF8276 13:15 飞，17:40 到黄花T2',amount:'参考',who:'刘总',nature:'查到·参考',ref:'同上',refUrl:'—'},
-      {name:'机票税费',detail:'机建50+燃油140/航段×6段，约¥1,140；12月燃油或再调',amount:'1,140',who:'个人',nature:'估算·参考',ref:'清单第八节',refUrl:'—'}
+  {cat:'机票（三人公摊平摊·含税实价待出单）',items:[
+      {name:'深圳→乌市往返（熊大）',detail:'去程 UQ2616 12:35 落地 URC；返程 SC2325 08:15 飞，13:20 到宝安T3',amount:'参考',who:'公摊',nature:'查到·参考（纳入公摊平摊，含税实价待出单后并入合计）',ref:'裸价参照：去 ¥710 + 回 ¥1,190 ≈ ¥1,900/人（未税、未核余座）；含税以下单当日为准',refUrl:'—'},
+      {name:'深圳→乌市往返（怡哥）',detail:'去程同 UQ2616；返程同 SC2325',amount:'参考',who:'公摊',nature:'查到·参考（纳入公摊平摊，含税实价待出单后并入合计）',ref:'同上，裸价参照约 ¥1,900/人；含税以下单当日为准',refUrl:'—'},
+      {name:'长沙→乌市往返（刘总）',detail:'去程 CZ3467 14:00 落地 URC；返程 MF8276 13:15 飞，17:40 到黄花T2',amount:'参考',who:'公摊',nature:'查到·参考（纳入公摊平摊，含税实价待出单后并入合计）',ref:'裸价参照：去 ¥1,010 + 回 ¥900 ≈ ¥1,910/人（未税、未核余座）；含税以下单当日为准',refUrl:'—'},
+      {name:'机票税费（机建+燃油）',detail:'机建50+燃油140/航段×6段，约¥1,140；12月燃油或再调',amount:'1,140',who:'公摊',nature:'估算·参考（纳入公摊平摊）',ref:'清单第八节',refUrl:'—'}
     ]},
   {cat:'租车（A档12天坦克300·12/6→12/18）',items:[
-      {name:'基础租金',detail:'12天坦克300 2.0T汽油，secondstep 明文',amount:'3,669',who:'公摊',nature:'查到·待门店书面确认',ref:'一嗨 secondstep',refUrl:'https://booking.1hai.cn/order/firststep'},
-      {name:'高保障升级(另计)',detail:'百万777 / 全程无忧812 比价择优；行无忧300/无忧还车25/乘客守护413 是否购买未拍板',amount:'777–812',who:'公摊',nature:'预留·待拍板',ref:'清单第八节',refUrl:'—'},
+      {name:'基础租金',detail:'12天坦克300 2.0T汽油，一嗨下单页实价',amount:'3,669',who:'公摊',nature:'查到·待门店书面确认',ref:'一嗨下单页',refUrl:'https://booking.1hai.cn/order/firststep'},
+      {name:'高保障升级(另计)',detail:'百万777 / 全程无忧812 比价择优；行无忧300/无忧还车25/乘客守护413 买不买还没定',amount:'777–812',who:'公摊',nature:'预留·待定',ref:'清单第八节',refUrl:'—'},
       {name:'四驱/差速锁/雪地胎书面确认',detail:'AT胎P0：原厂AT胎进不了喀纳斯；取车必须书面确认合格雪地胎，否则改当地包车/就地换胎。【本轮无法落地原因】按约束不拨打电话；一嗨登录态已过期、在线合同无法留痕；候选车四驱/差速锁/雪地胎规格、合同进山条款、车龄导航、二三驾驶员登记，须取车现场向门店(18599219983 / 400-888-6608)书面核验后回填',amount:'—',who:'公摊',nature:'⚠️待门店书面确认(#11)',ref:'AT胎禁令公告',refUrl:'https://xjalt.gov.cn/005/005003/005003002/20251030/9a1912f0-87af-4f75-a0a1-958a3a1aeb11.html'}
     ]},
   {cat:'交通·油费过路',items:[
@@ -1217,10 +1217,10 @@ const expenses = [
   {cat:'滑雪初学体验(D4吉克普林)',items:[
       {name:'雪票+雪具(不含教练)',detail:'初级魔毯区全日雪票+雪具320/人×3=960（26-27阿尔泰旅游发展集团公示价目图，转中国旅游报/腾讯/本地宝，L3媒体转发·非雪场小程序原文）；头盔雪镜雪服各20/人×3=180（25-26官方参照，26-27租赁单价未公示）；护具50/套待核',amount:'1,140',who:'公摊',nature:'雪票集团价目转媒体L3·租赁25-26参照',ref:'26-27集团公示价目图+25-26租赁参照',refUrl:'https://www.xjalt.gov.cn/govxxgk/DD001/2025-11-12/1ed81147-2373-4340-8a3d-9c23d113e623.html'},
       {name:'1V1教练(3人各2h)',detail:'25–26官方2h¥700/人×3=2,100；26–27未公示⚠️',amount:'2,100',who:'公摊',nature:'参照·待核',ref:'雪场400-004-5800',refUrl:'—'},
-      {name:'观光缆车',detail:'Q14 A案不选',amount:'0',who:'—',nature:'拍板不选',ref:'决策树Q14A',refUrl:'—'}
+      {name:'观光缆车',detail:'本次不选',amount:'0',who:'—',nature:'本次不选',ref:'行程方案已定',refUrl:'—'}
     ]},
   {cat:'餐饮(41顿/人·付费29顿)',items:[
-      {name:'全程正餐(中值)',detail:'人均¥2,029；三人¥6,087；不含哞哞升级餐¥5,838/¥1,946；低¥5,280/¥1,760；高¥7,800/¥2,600',amount:'6,087',who:'公摊',nature:'内部估算·待实付对账',ref:'v1.json meals/costRollup',refUrl:'—'}
+      {name:'全程正餐(中值)',detail:'人均¥2,029；三人¥6,087；不含哞哞升级餐¥5,838/¥1,946；低¥5,280/¥1,760；高¥7,800/¥2,600',amount:'6,087',who:'公摊',nature:'估算·按实付对账',ref:'历史清单餐费测算',refUrl:'—'}
     ]},
   {cat:'保险·单独旅游意外险',items:[
       {name:'三人意外险(各1份)',detail:'主推平安行·出行安全守护 ZP021425（专业版+滑雪/山地加购）。已核 1 天参照价：专业版 ¥24、滑雪加购 ¥4.5、山地加购 ¥1；短档价不推长档——15 天档须在投保页选被保人日期/年龄后实算，报价页改档价格不刷新不算实算，不得按日均×15 推算。备选冬梦滑雪险 ZP021417 基础版 1 天 ¥6 起。未出单、保单号待填；已拍板（2026-11-15）：三人公摊平摊；15 天档费率投保页实算后并入公摊合计、人均 ÷3',amount:'—',who:'公摊',nature:'⚠️待核价·未出单（15天档投保页实算；已拍板三人公摊平摊）',ref:'平安产品页',refUrl:'https://baoxian.pingan.com/pa18shopnst/nstShop/index.html#/productInfo/ZP021425'}
@@ -1244,7 +1244,7 @@ const weatherPoints = [
   {loc:'赛里木湖',lat:44.609,lon:81.119,temp:'—',desc:'加载中…'},
   {loc:'温泉县',lat:44.981,lon:81.036,temp:'—',desc:'加载中…'}
 ];;
-const tasks = ['出发前 7–10 天：三间大床、同层、供暖热水逐店确认；冬季房源紧，订完把订单离线存图。','出发前 3 天：逐日看雪情与封路通告（平安喀纳斯 / 阿勒泰交警），确认阿禾公路放行窗口。','出发前 3 天：门店书面确认四驱/差速锁/雪地胎（胎侧 SNOW/WINTER，非 AT 胎）/合同进山/车龄导航（#11）。','出发前 2 天：下载阿勒泰—禾木—喀纳斯—赛湖—乌市全线离线地图；备 -40℃ 防冻玻璃水、防滑链。','出发前 1 天：三人身份证/驾照/白哈巴边防证（勾“阿勒泰地区”，可补注哈巴河县白哈巴村）；机票/租车/酒店订单离线存图。','出发当天：充电宝 2 万毫安内 3C 认证贴身、暖宝宝、干粮热水；现金约 ¥2,000。','每天出发前：看天气页确认天气与放行窗口；油箱低于半箱即补。','每天 20:00 前：确保已到住宿点，山里天黑后不通行。'];;
+const tasks = ['出发前 7–10 天：三间大床、同层、供暖热水逐店确认；冬季房源紧，订完把订单离线存图。','出发前 3 天：逐日看雪情与封路通告（平安喀纳斯 / 阿勒泰交警），确认阿禾公路放行窗口。','出发前 3 天：门店书面确认四驱/差速锁/雪地胎（胎侧 SNOW/WINTER，非 AT 胎）/合同进山/车龄导航。','出发前 2 天：下载阿勒泰—禾木—喀纳斯—赛湖—乌市全线离线地图；备 -40℃ 防冻玻璃水、防滑链。','出发前 1 天：三人身份证/驾照/白哈巴边防证（勾“阿勒泰地区”，可补注哈巴河县白哈巴村）；机票/租车/酒店订单离线存图。','出发当天：充电宝 2 万毫安内 3C 认证贴身、暖宝宝、干粮热水；现金约 ¥2,000。','每天出发前：看天气页确认天气与放行窗口；油箱低于半箱即补。','每天 20:00 前：确保已到住宿点，山里天黑后不通行。'];;
 const emergencies = [
   {title:'阿勒泰交警（122）',phone:'122',desc:'阿禾公路放行与路况，接线时说明在阿勒泰境内'},
   {title:'喀纳斯景区热线',phone:'400-111-0906',desc:'景区内被困、门票与区间车咨询；冬季班次首末班待核'},
@@ -1391,17 +1391,17 @@ function renderExpenses(){
   }).join('、');
   const oneShare=(sharedTotal/members.length);
   const rows=members.map(m=>{
-    if(m===_PAY)return `<div class="settlement__row"><span>${_PAY}</span><span>先垫 ¥${sharedTotal.toLocaleString()}，自己那份 ¥${share[m].toLocaleString()} 自己担；机票各买各的，不进平摊</span></div>`;
-    return `<div class="settlement__row"><span>${m} → 转给${_PAY}</span><span>¥${share[m].toLocaleString()}（自己那 ¥${selfPaid[m].toLocaleString()} 已自付）</span></div>`;
+    if(m===_PAY)return `<div class="settlement__row"><span>${_PAY}</span><span>先垫 ¥${sharedTotal.toLocaleString()}，自己那份 ¥${share[m].toLocaleString()} 自己担；机票也纳入三人公摊平摊</span></div>`;
+    return `<div class="settlement__row"><span>${m} → 转给${_PAY}</span><span>¥${share[m].toLocaleString()}（公摊一份；自己那 ¥${selfPaid[m].toLocaleString()} 已自付）</span></div>`;
   }).join('');
   document.getElementById('settlement').innerHTML=`
     <div class="settlement__title">这笔账怎么分</div>
-    <p class="settle-rule">自己那份自己付，不进平摊：${selfLine}。</p>
+    ${members.some(m=>selfPaid[m]>0)?`<p class="settle-rule">自己那份自己付，不进平摊：${selfLine}。</p>`:'<p class="settle-rule">没有单独自付的项，机票、住宿、吃饭这些全部三人公摊。</p>'}
     <p class="settle-rule">剩下的 ¥${sharedTotal.toLocaleString()} 是${_PCN}个人一起花的，一人一份 ${oneShare.toLocaleString('zh-CN',{minimumFractionDigits:2,maximumFractionDigits:2})}；凑整后${members.map(m=>m+' ¥'+share[m].toLocaleString()).join('、')}${rem?'，多出的 '+rem+' 元记'+members[0]:''}。</p>
-    <p class="settle-rule">这趟说好由${_PAY}统一刷卡，${_OTHERS.join('和')}不用先掏钱，回来各转一笔就完事。</p>
+    <p class="settle-rule">这趟由${_PAY}统一刷卡垫付；出发前每人先预交 ¥10,000 给${_PAY}，多退少补，行程结束统一对账结算。</p>
     ${rows}
     <div class="settlement__row"><span>${_PCN}个人一共</span><span>${members.map(m=>m+' ¥'+due[m].toLocaleString()).join(' · ')} ＝ ¥${members.reduce((a,m)=>a+due[m],0).toLocaleString()}</span></div>
-    <p class="settle-note">每个人该出多少 = 自己那几笔 + 平摊的一份。三档合计 ¥${members.reduce((a,m)=>a+due[m],0).toLocaleString()}，摊成一样是每人 ¥${due[members[0]].toLocaleString()}；机票各买各的，所以按上面那列给。</p>`;
+    <p class="settle-note">每个人该出多少 = 平摊的一份。合计 ¥${members.reduce((a,m)=>a+due[m],0).toLocaleString()}，摊成一样是每人 ¥${due[members[0]].toLocaleString()}；机票也纳入三人公摊，含税实价出单后并入合计、再三人平分。</p>`;
 
   /* —— 按人拆账：自己单独出的 / 大家一起花的，各算一块 —— */
   const sharedByCat=[];
@@ -1420,8 +1420,8 @@ function renderExpenses(){
       return `<li><b>${c.cat}</b><span>一共 ¥${c.sum.toLocaleString()}　你那份 ¥${per.toLocaleString()}</span></li>`;
     }).join('');
     const payLine = m===_PAY
-      ? '这趟说好你统一刷卡，先垫 '+sharedTotal.toLocaleString()+' 元；'+_OTHERS.join('和')+'回来各转你一笔，你自己净掏 '+(share[m]+selfPaid[m]).toLocaleString()+' 元'
-      : `${_PAY}统一刷卡，你不用先掏钱；回来转${_PAY} ${share[m].toLocaleString()} 元就行，自己那 ${selfPaid[m].toLocaleString()} 元已经自己付过了`;
+      ? '这趟由你统一刷卡垫付；出发前每人先预交你 ¥10,000，多退少补，结束统一对账；你自己净掏 '+(share[m]+selfPaid[m]).toLocaleString()+' 元'
+      : `出发前先预交 ${_PAY} ¥10,000，多退少补；回来按公摊一份转 ${_PAY} ${share[m].toLocaleString()} 元，自己那 ${selfPaid[m].toLocaleString()} 元已自付`;
     return `<div class="money-panel${idx===0?' active':''}" data-mwho="${m}">
       <div class="money-card">
         <div class="money-card__t">自己单独出的 · 不进平摊</div>
@@ -1434,7 +1434,7 @@ function renderExpenses(){
         <div class="money-card__s">小计 ¥${share[m].toLocaleString()}（凑整后）</div>
       </div>
       <div class="money-sum"><span>${m} 这趟一共该出</span><b>¥${due[m].toLocaleString()}</b></div>
-      <p class="money-note">${payLine}。机票各买各的，从来不算在平摊里。</p>
+      <p class="money-note">${payLine}。机票也在公摊里，含税实价出单后并入人均。</p>
     </div>`;
   }).join('');
   const mt=document.getElementById('moneyTabs');
@@ -1766,7 +1766,7 @@ const CAR = {models:[
   {k:'保险免赔额',v:'基础保障含小伤免赔；建议加买百万守护 ¥777 / 全程无忧 ¥812 择优；冰雪/非铺装路段是否承保、雪场初学是否在范围逐条确认。'},
   {k:'进山许可',v:'合同写明允许驶入禾木（阿禾公路）、喀纳斯山区路段；标准合同常列禁行区，出事不赔。'},
   {k:'驾驶员登记',v:'第二、第三名驾驶员登记在合同上，否则出事只认第一驾驶员；问清驾龄/年龄门槛。'},
-  {k:'押金',v:'违章押金 ¥2,000 预授权，还车后 30 天无违章解冻；车辆押金免收；payer 带本人可用信用卡备用。'},
+  {k:'押金',v:'违章押金 ¥2,000 预授权，还车后 30 天无违章解冻；车辆押金免收；垫付人带本人可用信用卡备用。'},
   {k:'油',v:'满油取满油还，还车前机场附近加满留小票；油不足补差额 +75 元加油服务费，购无忧还车 ¥25 可免。'},
   {k:'取还门店',v:'一嗨乌鲁木齐天山国际机场店 P1 停车楼 6F-C，站内取还闭环无异地费；营业 00:00–23:59。'}
 ],emergency:[
@@ -1806,7 +1806,7 @@ function renderCar(){
   const lk=CAR.links.map(x=>`<a class="car-link" href="${x.u}" target="_blank" rel="noopener">${x.n} ↗<span>${x.t}</span></a>`).join('');
   list.innerHTML=`
     <div class="car-card car-card--note">
-      <p class="car-card__why"><b>先说钱。</b>主推坦克 300 为 12/6 10:00 取车、12/18 10:00 还、共 12 天，基础保障 ¥3,669（日均 ¥305.8），11-14 登录一嗨 secondstep 明文；下面三款备选为 14 天档比价，12 天档价待门店锁定车型后补核，不按日均×天数估算。三件事得提前知道：<b>①</b> 取车、还车都在乌鲁木齐天山国际机场店（P1 停车楼 6F-C）同一门店，无异地费；坦克 300 是否在店、四驱/差速锁/合格雪地胎须取车时书面确认（#11），AT 胎不算雪地胎；<b>②</b> 报价不含保险和手续费，高保障（百万守护 ¥777 / 全程无忧 ¥812）另计择优；<b>③</b> 价格随日期浮动，下单当天以门店核价为准，出发前一周再核一次。</p>
+      <p class="car-card__why"><b>先说钱。</b>主推坦克 300 为 12/6 10:00 取车、12/18 10:00 还、共 12 天，基础保障 ¥3,669（日均 ¥305.8），11-14 登录一嗨查到的实价；下面三款备选为 14 天档比价，12 天档价待门店确认车型后补核，不按日均×天数估算。三件事得提前知道：<b>①</b> 取车、还车都在乌鲁木齐天山国际机场店（P1 停车楼 6F-C）同一门店，无异地费；坦克 300 是否在店、四驱/差速锁/合格雪地胎须取车时书面确认，AT 胎不算雪地胎；<b>②</b> 报价不含保险和手续费，高保障（百万守护 ¥777 / 全程无忧 ¥812）另计择优；<b>③</b> 价格随日期浮动，下单当天以门店核价为准，出发前一周再核一次。</p>
       <div class="car-links">${lk}</div>
     </div>
     <h3 class="page-title" style="font-size:1.1rem;margin:1.4rem 0 .7rem">选哪一档</h3>
@@ -1892,7 +1892,7 @@ function jumpTargets(){
   return list;
 }
 /* 景点地名 → 看点卡片：手工别名表，右边一律逐字等于 spots 里的 name */
-const SPOT_ALIAS = {'禾木桥':'禾木桥·白桦林·禾木河','禾木河':'禾木桥·白桦林·禾木河','白桦林':'禾木桥·白桦林·禾木河','禾木村':'禾木桥·白桦林·禾木河','禾木':'禾木桥·白桦林·禾木河','哈登观景台':'哈登观景台晨雾','哈登平台':'哈登观景台晨雾','晨雾':'哈登观景台晨雾','吉克普林':'吉克普林初学雪场','雪场':'吉克普林初学雪场','初级魔毯':'吉克普林初学雪场','三湾':'喀纳斯三湾','月亮湾':'喀纳斯三湾','卧龙湾':'喀纳斯三湾','神仙湾':'喀纳斯三湾','喀纳斯湖':'喀纳斯湖沿岸·新村','新村':'喀纳斯湖沿岸·新村','喀纳斯湖沿岸':'喀纳斯湖沿岸·新村','白哈巴':'白哈巴村(A准备/B兜底)','五彩滩':'五彩滩日落','魔鬼城':'乌尔禾魔鬼城雪景','世界魔鬼城':'乌尔禾魔鬼城雪景','乌尔禾':'乌尔禾魔鬼城雪景','赛里木湖':'赛里木湖冰推·冰裂','赛湖':'赛里木湖冰推·冰裂','冰推':'赛里木湖冰推·冰裂','冰裂':'赛里木湖冰推·冰裂','圣泉':'温泉县圣泉·泡汤','温泉圣泉':'温泉县圣泉·泡汤','博格达':'温泉县圣泉·泡汤','泡汤':'温泉县圣泉·泡汤','阿禾公路':'阿禾公路冬季段','大巴扎':'乌鲁木齐国际大巴扎','国际大巴扎':'乌鲁木齐国际大巴扎','独库公路':'独库公路零公里(仅拍照)','零公里':'独库公路零公里(仅拍照)','独库零起点':'独库公路零公里(仅拍照)'};;
+const SPOT_ALIAS = {'禾木桥':'禾木桥·白桦林·禾木河','禾木河':'禾木桥·白桦林·禾木河','白桦林':'禾木桥·白桦林·禾木河','禾木村':'禾木桥·白桦林·禾木河','禾木':'禾木桥·白桦林·禾木河','哈登观景台':'哈登观景台晨雾','哈登平台':'哈登观景台晨雾','晨雾':'哈登观景台晨雾','吉克普林':'吉克普林初学雪场','雪场':'吉克普林初学雪场','初级魔毯':'吉克普林初学雪场','三湾':'喀纳斯三湾','月亮湾':'喀纳斯三湾','卧龙湾':'喀纳斯三湾','神仙湾':'喀纳斯三湾','喀纳斯湖':'喀纳斯湖沿岸·新村','新村':'喀纳斯湖沿岸·新村','喀纳斯湖沿岸':'喀纳斯湖沿岸·新村','白哈巴':'白哈巴村','五彩滩':'五彩滩日落','魔鬼城':'乌尔禾魔鬼城雪景','世界魔鬼城':'乌尔禾魔鬼城雪景','乌尔禾':'乌尔禾魔鬼城雪景','赛里木湖':'赛里木湖冰推·冰裂','赛湖':'赛里木湖冰推·冰裂','冰推':'赛里木湖冰推·冰裂','冰裂':'赛里木湖冰推·冰裂','圣泉':'温泉县圣泉·泡汤','温泉圣泉':'温泉县圣泉·泡汤','博格达':'温泉县圣泉·泡汤','泡汤':'温泉县圣泉·泡汤','阿禾公路':'阿禾公路冬季段','大巴扎':'乌鲁木齐国际大巴扎','国际大巴扎':'乌鲁木齐国际大巴扎','独库公路':'独库公路零公里(仅拍照)','零公里':'独库公路零公里(仅拍照)','独库零起点':'独库公路零公里(仅拍照)'};;
 function dayNo(d){return String(d||'').replace(/^D/,'');}
 function mkJump(n,k,label){
   const b=document.createElement('button');
@@ -2018,10 +2018,10 @@ function decorateA11y(){
 }
 
 /* 卡片上的站点编号：只标地图上真放得出的点，其余不标——编号就是"去地图上找这个点" */
-const CARD_CODE = {'馬风花·大盘鸡·歌舞露天烧烤（机场店）':['D1-2'],'温德姆花园(天山国际机场店)':['D1-3'],'金桥假日(将军山滑雪场店)':['D2-2'],'疆客·游牧新疆菜·本地冷水鱼（阿勒泰黑金店）':['D2-3'],'阿禾公路冬季段':['D3-1'],'禾木桥·白桦林·禾木河':['D3-2'],'云端漫居餐厅（禾木店）':['D3-3'],'禾木裸心隐乡':['D3-4','D4-4'],'哈登观景台晨雾':['D4-1'],'吉克普林初学雪场':['D4-2'],'禾木哞哞小火锅':['D4-3'],'喀纳斯三湾':['D5-1'],'泰加餐厅':['D5-2','D6-2','D7-2','D8-1'],'停泊STAY·坐忘':['D5-3','D6-3'],'喀纳斯湖沿岸·新村':['D6-1'],'白哈巴村(A准备/B兜底)':['D7-1'],'安遇·ANYU 旷野':['D7-3','D8-2'],'五彩滩日落':['D9-1'],'阿凡提冷水鱼庄（百花园路店）':['D9-2'],'知禾·设计师艺术民宿(额尔齐斯河店)':['D9-3'],'乌尔禾魔鬼城雪景':['D10-1'],'阿吾丹的烤羊·新疆菜·羊拐抓饭（乌尔禾 2 店）':['D10-2'],'独山子玛依塔柯酒店':['D10-3'],'独库公路零公里(仅拍照)':['D10-4'],'华盛酒楼（独山子东方花园店）':['D10-5'],'赛里木湖冰推·冰裂':['D11-1'],'大河宴鱼火锅·赛湖高白鲑·冷水鱼（赛里木湖店）':['D11-2'],'赛里木湖逸扉酒店':['D11-3'],'温泉县圣泉·泡汤':['D12-1'],'旺福楼酒店（温泉店）':['D12-2'],'温泉花间堂·阿日相':['D12-3'],'馬风花·新疆菜·大盘鸡（人民电影院店）':['D13-2'],'美豪丽致(国际大巴扎南门地铁站店)':['D13-3'],'乌鲁木齐国际大巴扎':['D14-1'],'丝路有约·优雅新疆菜（万宴城店）':['D14-2'],'马师傅的油糕店（国际大巴扎）':['D14-3']};;
+const CARD_CODE = {'馬风花·大盘鸡·歌舞露天烧烤（机场店）':['D1-2'],'温德姆花园(天山国际机场店)':['D1-3'],'金桥假日(将军山滑雪场店)':['D2-2'],'疆客·游牧新疆菜·本地冷水鱼（阿勒泰黑金店）':['D2-3'],'阿禾公路冬季段':['D3-1'],'禾木桥·白桦林·禾木河':['D3-2'],'云端漫居餐厅（禾木店）':['D3-3'],'禾木裸心隐乡':['D3-4','D4-4'],'哈登观景台晨雾':['D4-1'],'吉克普林初学雪场':['D4-2'],'禾木哞哞小火锅':['D4-3'],'喀纳斯三湾':['D5-1'],'泰加餐厅':['D5-2','D6-2','D7-2','D8-1'],'停泊STAY·坐忘':['D5-3','D6-3'],'喀纳斯湖沿岸·新村':['D6-1'],'白哈巴村':['D7-1'],'安遇·ANYU 旷野':['D7-3','D8-2'],'五彩滩日落':['D9-1'],'阿凡提冷水鱼庄（百花园路店）':['D9-2'],'知禾·设计师艺术民宿(额尔齐斯河店)':['D9-3'],'乌尔禾魔鬼城雪景':['D10-1'],'阿吾丹的烤羊·新疆菜·羊拐抓饭（乌尔禾 2 店）':['D10-2'],'独山子玛依塔柯酒店':['D10-3'],'独库公路零公里(仅拍照)':['D10-4'],'华盛酒楼（独山子东方花园店）':['D10-5'],'赛里木湖冰推·冰裂':['D11-1'],'大河宴鱼火锅·赛湖高白鲑·冷水鱼（赛里木湖店）':['D11-2'],'赛里木湖逸扉酒店':['D11-3'],'温泉县圣泉·泡汤':['D12-1'],'旺福楼酒店（温泉店）':['D12-2'],'温泉花间堂·阿日相':['D12-3'],'馬风花·新疆菜·大盘鸡（人民电影院店）':['D13-2'],'美豪丽致(国际大巴扎南门地铁站店)':['D13-3'],'乌鲁木齐国际大巴扎':['D14-1'],'丝路有约·优雅新疆菜（万宴城店）':['D14-2'],'马师傅的油糕店（国际大巴扎）':['D14-3']};;
 const MV_SPOT_SVG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-6.5-6.1-6.5-11a6.5 6.5 0 0 1 13 0c0 4.9-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>';
 /* 看点 → 当天编号：'D3-3' 表示回 D3 地图定位该点，'D5' 只表示在这天的路上 */
-const SPOT_MAP = {'禾木桥·白桦林·禾木河':'D3-2','哈登观景台晨雾':'D4-1','吉克普林初学雪场':'D4-2','喀纳斯三湾':'D5-1','喀纳斯湖沿岸·新村':'D6-1','白哈巴村(A准备/B兜底)':'D7-1','五彩滩日落':'D9-1','乌尔禾魔鬼城雪景':'D10-1','赛里木湖冰推·冰裂':'D11-1','温泉县圣泉·泡汤':'D12-1','阿禾公路冬季段':'D3-1','乌鲁木齐国际大巴扎':'D14-1','独库公路零公里(仅拍照)':'D10-4'};;
+const SPOT_MAP = {'禾木桥·白桦林·禾木河':'D3-2','哈登观景台晨雾':'D4-1','吉克普林初学雪场':'D4-2','喀纳斯三湾':'D5-1','喀纳斯湖沿岸·新村':'D6-1','白哈巴村':'D7-1','五彩滩日落':'D9-1','乌尔禾魔鬼城雪景':'D10-1','赛里木湖冰推·冰裂':'D11-1','温泉县圣泉·泡汤':'D12-1','阿禾公路冬季段':'D3-1','乌鲁木齐国际大巴扎':'D14-1','独库公路零公里(仅拍照)':'D10-4'};;
 function mapBtn(s,i){
   const c=SPOT_MAP[s.name]; if(!c)return '';
   const pin=c.indexOf('-')>0;
