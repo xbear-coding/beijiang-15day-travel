@@ -2059,6 +2059,9 @@ const KMPS = 11;                 /* 1× = 11 km/秒，全程约 227 秒；再快
 
 let mvMap=null,mvBase=null,mvTrail=null,mvGlow=null,mvProg=null,mvHi=null,mvCar=null,mvMe=null,mvWatch=null,mvLoaded=false,mvDayMarks=[],mvPoiLayer=null;
 let TRIP=null,GPTS=[],GCUM=[],TRIP_TOTAL=0,DS=[];
+/* 行程单全程里程：导航表/itinerary 逐日求和 2,497km（G100 守护，SEO 写「约 2,500 公里」）。
+   面向乘客的全程文案用此口径；TRIP_TOTAL 是沿道路几何累加值，仅用于走线/播放进度内部比例，不在介绍文案暴露。 */
+const PLAN_TOTAL_KM=2497,PLAN_TOTAL_LABEL='2,500';
 const PV={km:0,maxKm:0,playing:false,speed:1,last:0,day:'D1',timer:null,_wantPlay:false,
   _raf:null,_rafSeen:0,_drvGuard:null,_stops:[],_stopI:0,holdUntil:0,_holdKey:''};
 
@@ -2608,7 +2611,7 @@ function mvInit(){
         mvPoiRender(DAYS);
         mvHi.setLatLngs([]);
         mvMap.flyToBounds(L.latLngBounds(GPTS),{padding:[60,60],duration:1.0,maxZoom:9});
-        mvHint('全程 '+DAYS.length+' 天 · '+Math.round(TRIP_TOTAL)+' km · 圆点即要点，放大或点圆点看名字');
+        mvHint('全程 '+DAYS.length+' 天 · 约 '+PLAN_TOTAL_LABEL+' km · 圆点即要点，放大或点圆点看名字');
         return;
       }
       document.getElementById('mapView').classList.remove('mv-all-mode');
@@ -2682,8 +2685,8 @@ function mvInit(){
     mvMap.flyToBounds(L.latLngBounds(TRIP[0].geom),{padding:[70,70],duration:1.1,maxZoom:10});
     const _offN=TRIP.filter(function(d){return d.fallback;}).length;
     mvHint(_offN>0
-      ? '部分路段为离线示意连线（'+_offN+' 天 · 非真实道路）· 全长约 '+TRIP_TOTAL.toFixed(0)+' km，点日期看当天要点'
-      : '真实道路已载入 · 全长约 '+TRIP_TOTAL.toFixed(0)+' km，点日期看当天要点，按播放走全程');
+      ? '部分路段为离线示意连线（'+_offN+' 天 · 非真实道路）· 全长约 '+PLAN_TOTAL_LABEL+' km，点日期看当天要点'
+      : '真实道路已载入 · 全长约 '+PLAN_TOTAL_LABEL+' km，点日期看当天要点，按播放走全程');
     if(PV._wantPlay){PV._wantPlay=false;setPlaying(true);}
   });
 }
