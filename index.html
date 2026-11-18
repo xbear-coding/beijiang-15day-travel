@@ -535,6 +535,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 
 /* —— 看点：多图左右滑动 —— */
 .spot-card__gallery{position:relative;height:212px;overflow:hidden;background:var(--bg-secondary)}
+.act-card__empty{display:flex;align-items:center;justify-content:center;text-align:center;padding:1rem;color:var(--text-muted);font-size:.82rem;border:1px dashed var(--border)}
+.act-level{margin-right:.45rem}
+.act-level--A{color:#2f7d4f;border-color:rgba(47,125,79,.35)}
+.act-level--B{color:#3a6ea5;border-color:rgba(58,110,165,.35)}
+.act-level--D{color:var(--text-muted)}
 .spot-card__track{display:flex;height:100%;will-change:transform;transition:transform .42s cubic-bezier(.4,0,.2,1)}
 .spot-card__slide{flex:0 0 100%;height:100%}
 .spot-card__slide img{width:100%;height:100%;object-fit:cover;display:block}
@@ -655,6 +660,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
     <span class="sticky-tabs__back" onclick="backToHome()">← 返回</span>
     <span class="sticky-tabs__tab active" data-tab="zoufa">走法</span>
     <span class="sticky-tabs__tab" data-tab="kandian">看点</span>
+    <span class="sticky-tabs__tab" data-tab="youwan">游玩</span>
     <span class="sticky-tabs__tab" data-tab="chizhu">吃住</span>
     <span class="sticky-tabs__tab" data-tab="suanzhang">算账</span>
   </nav>
@@ -679,6 +685,14 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
     <p class="page-desc">按行政区域分开，每处多张图，左右滑动看，点开可放大。</p>
     <div class="subnav" id="spotSubnav" data-target="#kandian"><span class="subnav__label">行政区</span></div>
     <div id="spotsGrid"></div>
+  </div>
+
+  <!-- 游玩 -->
+  <div class="tab-panel" id="youwan">
+    <h2 class="page-title">游玩</h2>
+    <p class="page-desc">主线两项已排进行程；其余为现场可选，营业、价格与安全以当天为准，不锁进预算。</p>
+    <div class="subnav" id="actSubnav" data-target="#youwan"><span class="subnav__label">分组</span></div>
+    <div id="activitiesGrid"></div>
   </div>
 
   <!-- 吃住 -->
@@ -1067,14 +1081,19 @@ const spots = [
 ];
 /*DATA:spots:END*/;
 
+/* 游玩（娱乐项目） */
+/*DATA:activities:START —— tools/build_v2.py 从 trip-14n-v2.json 生成，勿手改*/
+const activities = [];
+/*DATA:activities:END*/;
+
 /* 酒店（十四晚住处） */
 /*DATA:hotels:START —— tools/build_v2.py 从 trip-14n-v2.json 生成，勿手改*/
 const hotels = [
-  {name:'温德姆花园(天山国际机场店)',ll:[43.932148,87.530327],geo:'area',addr:'新市区北京北路3366号6号楼商业101室',tel:'0991-6579999 / 18690893699',price:'云栖雅致套房1间三人同住 ¥695.41（积分抵¥323，12/5 实单；非3间）',hours:'14:00 后入住 / 12:00 前退房；不收押金',img:'assets/hotel_wyndham.jpg',imgs:['assets/hotel_wyndham.jpg','assets/hotel_wyndham_1.jpg','assets/hotel_wyndham_2.jpg','assets/hotel_wyndham_3.jpg'],score:['4.6分','828条'],tags:['2025开业','免费班车接送机','2份早/间'],warn:'D1 晚。云栖雅致套房1间三人同住（非3间房），早1份；积分抵¥323后离店后付，熊大熊大垫付；订单1128152366216397有效不退。距机场携程5.1km、官网3km（两源不一致，点评车程约15min）；加早成人¥69/人；不可加床。⚠️ 图为平台公开图集（非现场实拍，现场以实景为准）；坐标来源见 coordSource，门牌精度以现场为准。',ref:'携程详情页↗',refUrl:'https://hotels.ctrip.com/hotels/130240722.html',ctripId:'130240722',nights:['D1'],breakfast:'2份/间（共6）',coordSource:'地图地址级 geocode：北京北路3366号（终点 POI 解析）',coordPrecision:'street',imgSource:'携程/Trip.com/Wyndham官网公开图集，自用记录非商业',priceStd:'双床：悦居双床 ¥298 无早 / ¥317 含早；尔雅浴缸双床 ¥358（房量紧张）。大床：欢致甜睡大床 ¥350 无早 / ¥366 含2早；尔雅浴缸大床 ¥365。',priceTriple:'有臻伴·三人套房(1特大+2双人床 70㎡)、萌动童趣亲子房(1特大+1双人床 42㎡)、童趣主题亲子房；该三类房型价本轮未实读，以订房页实时为准，不臆造。',tripleHas:'partial'},
-  {name:'金桥假日(将军山滑雪场店)',ll:[47.827,88.132603],geo:'street',addr:'阿勒泰解放路1号',tel:'0906-2171111',price:'3间大床×2晚 合计 ¥2,364；间夜均 ¥394/间夜（12/6→12/8 实单）',hours:'24h 前台；退房 14:00 前；需押金',img:'assets/hotel_jinqiao_1.jpg',imgs:['assets/hotel_jinqiao_1.jpg','assets/hotel_jinqiao_2.jpg','assets/hotel_jinqiao_3.jpg','assets/hotel_jinqiao_4.jpg'],score:['4.6分','724条'],tags:['暖气','2份早/间','库存4'],warn:'D2/D3 连住。怡哥怡哥垫付，3间大床2晚离店后付；旧三人间¥567已原路退熊大（退的是原1间三人间1晚，非新订三间大床）。距将军山雪场近；2份早/间；23:59前免费取消；不可带宠物。⚠️ ll 旧值 47.827,88.132603 可参照待复核。 坐标：旧十天同店坐标复用（street）。',ref:'携程详情页↗',refUrl:'https://hotels.ctrip.com/hotels/2140187.html',ctripId:'2140187',nights:['D2','D3'],breakfast:'2份/间（共6）',coordSource:'旧十天同店坐标复用（待现场复核）',coordPrecision:'street',imgSource:'同店历史素材（旧十天版本本店实拍，非2026冬季现场）',priceStd:'双床：惠享双床 ¥372；悦享双床 ¥397。大床：投影圆床 ¥329（无窗）；浪漫圆床 ¥355；惠享大床 ¥372。',priceTriple:'无独立三人间（页面房型仅大床/双床/圆床；所有房型不可加床）。',tripleHas:'none'},
-  {name:'隐阅·山境｜雪山景观民宿(禾木桥店)',ll:[48.570194,87.435226],geo:'door',addr:'禾木哈纳斯蒙古族乡禾木村苏木路48号',tel:'待订单详情/携程详情页补',price:'3间大床×2晚 合计 ¥7,038；间夜均 ¥1,173/间夜（12/8→12/10 实单）',hours:'14:00后入住 / 12:00前退房（以订单详情为准）',img:null,imgs:[],score:['4.7分','674条'],tags:['禾木桥店','雪山景观','地暖待核'],warn:'D4/D5 连住。怡哥怡哥垫付，3间大床2晚离店后付；房型全称/早份数/订单号待订单详情坐实。ctripId未定位到；电话/实拍图待补。⚠️ 缺口留痕：本店无同店历史素材，未定位到携程详情页ID，缺图留 null，不套用邻近店/通用素材；坐标为苏木路48号门牌 geocode（door），门牌精度以现场为准。',ref:'携程详情页↗',refUrl:'—',ctripId:'',nights:['D4','D5'],breakfast:'待订单详情坐实（截图房型：豪华标准间2×1.2m/22㎡无早；精致家庭房1双+1单/22㎡可住3人）',coordSource:'地图 geocode：苏木路48号（终点 POI 解析，距禾木桥参照点523m）',coordPrecision:'door',imgSource:'缺口留痕：待采本店携程公开图集/现场实拍；禁止沿用邻近店或通用素材',priceStd:'截图房型：豪华标准间 ¥1,287（2×1.2m/22㎡/无早）；精致家庭房 ¥1,374（1双+1单/22㎡/可住3人）。',priceTriple:'精致家庭房¥1,374可住3人；独立三床套房待详情页核。',tripleHas:'family'},
-  {name:'云蝶归野·Cloud Butterfly·设计师度假民宿(喀纳斯老村店)',ll:[48.695236,87.035843],geo:'door',addr:'禾木哈纳斯蒙古族乡哈纳斯路27号',tel:'15299387387 / 15199177758',price:'1间两居室LOFT×2晚 合计 ¥3,156；间夜均 ¥1,578/间夜（12/10→12/12 实单）',hours:'入住14:00后/退房12:00前；前台08:00–23:30；不收押金；12/7 23:59前免费取消',img:'assets/hotel_yundie.jpg',imgs:['assets/hotel_yundie.jpg','assets/hotel_yundie_1.jpg','assets/hotel_yundie_2.jpg','assets/hotel_yundie_3.jpg'],score:['5.0分','39条'],tags:['2026开业','40间','全屋地暖','加湿器','智能马桶','不可加床/宠物'],warn:'D6/D7 连住。⚠️1间LOFT三人同住（1大床+2单人床45㎡可住4），非3间房；怡哥怡哥垫付，离店后付。距换乘中心498m/老村727m/观鱼台2.5km；自助清真早08:00–10:00 ¥38/人；全屋地暖/恒温卫浴/加湿器/智能马桶/免费停车；不可加床不可宠物。房型全称/是否含早待订单详情；订单¥1,578/晚高于页面LOFT均价¥1,347约¥231/晚待对账。⚠️ 图为携程公开图集（非2026冬季现场实拍，现场以实景为准）；坐标为哈纳斯路27号门牌 geocode（door），门牌精度以现场为准。',ref:'携程详情页↗',refUrl:'https://hotels.ctrip.com/hotels/135008586.html',ctripId:'135008586',nights:['D6','D7'],breakfast:'自助清真早 ¥38/人；订单是否含早待详情坐实',coordSource:'地图 geocode：哈纳斯路27号（终点 POI 解析，老村偏东）',coordPrecision:'door',imgSource:'携程135008586公开图集，自用记录非商业（非2026冬季现场实拍）',priceStd:'LOFT两居室 1大床+2单人床 45㎡ 可住4，页面均¥1,347/晚；订单¥1,578/晚。',priceTriple:'LOFT两居室1大床+2单人床三人同住，¥1,578/晚（订单¥3,156/2晚）；无另订2间。',tripleHas:'family'},
-  {name:'隐山·Silvan 三十三度假民宿(白哈巴景区店)',ll:[48.696036,86.783308],geo:'area',addr:'铁热克提乡白哈巴村富民路52号',tel:'19390121740',price:'3间1晚 合计 ¥1,864.42；间夜均 ¥621.47/间夜（12/12→12/13 实单，在线付）',hours:'全屋地暖；不可加床；宠物免费；12/9 01:00前免费取消',img:'assets/hotel_yinshan.jpg',imgs:['assets/hotel_yinshan.jpg','assets/hotel_yinshan_1.jpg','assets/hotel_yinshan_2.jpg','assets/hotel_yinshan_3.jpg'],score:['4.4分','514条'],tags:['2024开业','26间','全屋地暖','含2早/间','宠物免费'],warn:'D8 住1晚。怡哥怡哥垫付，3间在线付¥750.94/¥648.24/¥465.24；加早¥35/38。白哈巴须边防证（换乘中心警务室办，勾阿勒泰地区可补注哈巴河县白哈巴村）+限量免费预约+当日雪情三条件齐备；出山意向G219铁热克提方向顺路，冬季推山雪风险高，封路则兜底折返喀纳斯方向经贾登峪S232出布尔津。⚠️ 图为携程公开图集（非2026冬季现场实拍）；坐标为白哈巴村POI area级，富民路52号门牌待现场复核。',ref:'携程详情页↗',refUrl:'https://hotels.ctrip.com/hotels/121745528.html',ctripId:'121745528',nights:['D8'],breakfast:'均含2早/间；加早¥35/38',coordSource:'地图 geocode：白哈巴村POI（富民路52号门牌待现场定位，area级）',coordPrecision:'area',imgSource:'携程121745528公开图集，自用记录非商业（非2026冬季现场实拍）',priceStd:'云顶大床¥649；云顶浴缸大床¥649；特价双床¥571；均2早 25㎡/2层。',priceTriple:'无独立三人间；3间分订。',tripleHas:'none'},
+  {name:'温德姆花园(天山国际机场店)',ll:[43.932148,87.530327],geo:'area',addr:'新市区北京北路3366号6号楼商业101室',tel:'0991-6579999 / 18690893699',price:'云栖雅致套房1间三人同住 ¥695.41（积分抵¥323，12/5 实单；非3间）',hours:'14:00 后入住 / 12:00 前退房；不收押金',img:'assets/hotel_wyndham.jpg',imgs:['assets/hotel_wyndham.jpg','assets/hotel_wyndham_1.jpg','assets/hotel_wyndham_2.jpg','assets/hotel_wyndham_3.jpg'],score:['4.6分','828条'],tags:['2025开业','免费班车接送机','2份早/间'],warn:'D1 晚。云栖雅致套房1间三人同住（非3间房），早1份；积分抵¥323后离店后付，熊大垫付；订单1128152366216397有效不退。距机场携程5.1km、官网3km（两源不一致，点评车程约15min）；加早成人¥69/人；不可加床。⚠️ 图为平台公开图集（非现场实拍，现场以实景为准）；坐标来源见 coordSource，门牌精度以现场为准。',ref:'携程详情页↗',refUrl:'https://hotels.ctrip.com/hotels/130240722.html',ctripId:'130240722',nights:['D1'],breakfast:'2份/间（共6）',coordSource:'地图地址级 geocode：北京北路3366号（终点 POI 解析）',coordPrecision:'street',imgSource:'携程/Trip.com/Wyndham官网公开图集，自用记录非商业',priceStd:'双床：悦居双床 ¥298 无早 / ¥317 含早；尔雅浴缸双床 ¥358（房量紧张）。大床：欢致甜睡大床 ¥350 无早 / ¥366 含2早；尔雅浴缸大床 ¥365。',priceTriple:'有臻伴·三人套房(1特大+2双人床 70㎡)、萌动童趣亲子房(1特大+1双人床 42㎡)、童趣主题亲子房；该三类房型价本轮未实读，以订房页实时为准，不臆造。',tripleHas:'partial'},
+  {name:'金桥假日(将军山滑雪场店)',ll:[47.827,88.132603],geo:'street',addr:'阿勒泰解放路1号',tel:'0906-2171111',price:'3间大床×2晚 合计 ¥2,364；间夜均 ¥394/间夜（12/6→12/8 实单）',hours:'24h 前台；退房 14:00 前；需押金',img:'assets/hotel_jinqiao_1.jpg',imgs:['assets/hotel_jinqiao_1.jpg','assets/hotel_jinqiao_2.jpg','assets/hotel_jinqiao_3.jpg','assets/hotel_jinqiao_4.jpg'],score:['4.6分','724条'],tags:['暖气','2份早/间','库存4'],warn:'D2/D3 连住。怡哥垫付，3间大床2晚离店后付；旧三人间¥567已原路退熊大（退的是原1间三人间1晚，非新订三间大床）。距将军山雪场近；2份早/间；23:59前免费取消；不可带宠物。⚠️ ll 旧值 47.827,88.132603 可参照待复核。 坐标：旧十天同店坐标复用（street）。',ref:'携程详情页↗',refUrl:'https://hotels.ctrip.com/hotels/2140187.html',ctripId:'2140187',nights:['D2','D3'],breakfast:'2份/间（共6）',coordSource:'旧十天同店坐标复用（待现场复核）',coordPrecision:'street',imgSource:'同店历史素材（旧十天版本本店实拍，非2026冬季现场）',priceStd:'双床：惠享双床 ¥372；悦享双床 ¥397。大床：投影圆床 ¥329（无窗）；浪漫圆床 ¥355；惠享大床 ¥372。',priceTriple:'无独立三人间（页面房型仅大床/双床/圆床；所有房型不可加床）。',tripleHas:'none'},
+  {name:'隐阅·山境｜雪山景观民宿(禾木桥店)',ll:[48.570194,87.435226],geo:'door',addr:'禾木哈纳斯蒙古族乡禾木村苏木路48号',tel:'待订单详情/携程详情页补',price:'3间大床×2晚 合计 ¥7,038；间夜均 ¥1,173/间夜（12/8→12/10 实单）',hours:'14:00后入住 / 12:00前退房（以订单详情为准）',img:null,imgs:[],score:['4.7分','674条'],tags:['禾木桥店','雪山景观','地暖待核'],warn:'D4/D5 连住。怡哥垫付，3间大床2晚离店后付；房型全称/早份数/订单号待订单详情坐实。ctripId未定位到；电话/实拍图待补。⚠️ 缺口留痕：本店无同店历史素材，未定位到携程详情页ID，缺图留 null，不套用邻近店/通用素材；坐标为苏木路48号门牌 geocode（door），门牌精度以现场为准。',ref:'携程详情页↗',refUrl:'—',ctripId:'',nights:['D4','D5'],breakfast:'待订单详情坐实（截图房型：豪华标准间2×1.2m/22㎡无早；精致家庭房1双+1单/22㎡可住3人）',coordSource:'地图 geocode：苏木路48号（终点 POI 解析，距禾木桥参照点523m）',coordPrecision:'door',imgSource:'缺口留痕：待采本店携程公开图集/现场实拍；禁止沿用邻近店或通用素材',priceStd:'截图房型：豪华标准间 ¥1,287（2×1.2m/22㎡/无早）；精致家庭房 ¥1,374（1双+1单/22㎡/可住3人）。',priceTriple:'精致家庭房¥1,374可住3人；独立三床套房待详情页核。',tripleHas:'family'},
+  {name:'云蝶归野·Cloud Butterfly·设计师度假民宿(喀纳斯老村店)',ll:[48.695236,87.035843],geo:'door',addr:'禾木哈纳斯蒙古族乡哈纳斯路27号',tel:'15299387387 / 15199177758',price:'1间两居室LOFT×2晚 合计 ¥3,156；间夜均 ¥1,578/间夜（12/10→12/12 实单）',hours:'入住14:00后/退房12:00前；前台08:00–23:30；不收押金；12/7 23:59前免费取消',img:'assets/hotel_yundie.jpg',imgs:['assets/hotel_yundie.jpg','assets/hotel_yundie_1.jpg','assets/hotel_yundie_2.jpg','assets/hotel_yundie_3.jpg'],score:['5.0分','39条'],tags:['2026开业','40间','全屋地暖','加湿器','智能马桶','不可加床/宠物'],warn:'D6/D7 连住。⚠️1间LOFT三人同住（1大床+2单人床45㎡可住4），非3间房；怡哥垫付，离店后付。距换乘中心498m/老村727m/观鱼台2.5km；自助清真早08:00–10:00 ¥38/人；全屋地暖/恒温卫浴/加湿器/智能马桶/免费停车；不可加床不可宠物。房型全称/是否含早待订单详情；订单¥1,578/晚高于页面LOFT均价¥1,347约¥231/晚待对账。⚠️ 图为携程公开图集（非2026冬季现场实拍，现场以实景为准）；坐标为哈纳斯路27号门牌 geocode（door），门牌精度以现场为准。',ref:'携程详情页↗',refUrl:'https://hotels.ctrip.com/hotels/135008586.html',ctripId:'135008586',nights:['D6','D7'],breakfast:'自助清真早 ¥38/人；订单是否含早待详情坐实',coordSource:'地图 geocode：哈纳斯路27号（终点 POI 解析，老村偏东）',coordPrecision:'door',imgSource:'携程135008586公开图集，自用记录非商业（非2026冬季现场实拍）',priceStd:'LOFT两居室 1大床+2单人床 45㎡ 可住4，页面均¥1,347/晚；订单¥1,578/晚。',priceTriple:'LOFT两居室1大床+2单人床三人同住，¥1,578/晚（订单¥3,156/2晚）；无另订2间。',tripleHas:'family'},
+  {name:'隐山·Silvan 三十三度假民宿(白哈巴景区店)',ll:[48.696036,86.783308],geo:'area',addr:'铁热克提乡白哈巴村富民路52号',tel:'19390121740',price:'3间1晚 合计 ¥1,864.42；间夜均 ¥621.47/间夜（12/12→12/13 实单，在线付）',hours:'全屋地暖；不可加床；宠物免费；12/9 01:00前免费取消',img:'assets/hotel_yinshan.jpg',imgs:['assets/hotel_yinshan.jpg','assets/hotel_yinshan_1.jpg','assets/hotel_yinshan_2.jpg','assets/hotel_yinshan_3.jpg'],score:['4.4分','514条'],tags:['2024开业','26间','全屋地暖','含2早/间','宠物免费'],warn:'D8 住1晚。怡哥垫付，3间在线付¥750.94/¥648.24/¥465.24；加早¥35/38。白哈巴须边防证（换乘中心警务室办，勾阿勒泰地区可补注哈巴河县白哈巴村）+限量免费预约+当日雪情三条件齐备；出山意向G219铁热克提方向顺路，冬季推山雪风险高，封路则兜底折返喀纳斯方向经贾登峪S232出布尔津。⚠️ 图为携程公开图集（非2026冬季现场实拍）；坐标为白哈巴村POI area级，富民路52号门牌待现场复核。',ref:'携程详情页↗',refUrl:'https://hotels.ctrip.com/hotels/121745528.html',ctripId:'121745528',nights:['D8'],breakfast:'均含2早/间；加早¥35/38',coordSource:'地图 geocode：白哈巴村POI（富民路52号门牌待现场定位，area级）',coordPrecision:'area',imgSource:'携程121745528公开图集，自用记录非商业（非2026冬季现场实拍）',priceStd:'云顶大床¥649；云顶浴缸大床¥649；特价双床¥571；均2早 25㎡/2层。',priceTriple:'无独立三人间；3间分订。',tripleHas:'none'},
   {name:'知禾·设计师艺术民宿(额尔齐斯河店)',ll:[47.694121,86.873797],geo:'door',addr:'布尔津卧龙湾路酒吧一条街2号楼',tel:'15009067506',price:'晴岚舒适大床 ¥440；三间/晚 ¥1,320',hours:'16:00 后入住 / 14:00 前退房；不收押金',img:'assets/hotel_zhihe.jpg',imgs:['assets/hotel_zhihe.jpg','assets/hotel_zhihe_1.jpg','assets/hotel_zhihe_2.jpg','assets/hotel_zhihe_3.jpg'],score:['4.7分','346条'],tags:['2025开业','额尔齐斯河畔','设计感','成人免费不限份早'],warn:'D9 晚。库存4；成人免费不限份早；政府报道43间 vs 携程41间（两源差2）；同街备选深山见·北山下 4.8/734/¥346。⚠️ ll 旧值 47.694121,86.873797 同店可复用、实拍照待采。 坐标：旧十天同店坐标复用（door）。',ref:'携程详情页↗',refUrl:'https://hotels.ctrip.com/hotels/131639186.html',ctripId:'131639186',nights:['D9'],breakfast:'成人免费不限份',coordSource:'旧十天同店坐标复用',coordPrecision:'door',imgSource:'同店历史素材（旧十天版本本店实拍，非2026冬季现场）',priceStd:'双床：特惠双床 45㎡ ¥394；白桦舒适双床 ¥440；苔庭湖景双床 ¥505。大床：特惠大床 ¥401；晴岚舒适大床 ¥440。',priceTriple:'无独立三人间（页面房型仅大床/双床）。',tripleHas:'none'},
   {name:'独山子玛依塔柯酒店',ll:[44.329022,84.88688],geo:'street',addr:'独山子大庆东路13号',tel:'0992-3886888',price:'油城景观大床 ¥305(2早档)；三间/晚 ¥915',hours:'18:00 前免费取消；早餐 08:30–10:00、¥48/人',img:'assets/hotel_maitake.jpg',imgs:['assets/hotel_maitake.jpg','assets/hotel_maitake_1.jpg','assets/hotel_maitake_2.jpg','assets/hotel_maitake_3.jpg'],score:['4.5分','496条'],tags:['2007开业/2010装修','集中供暖','免费停车'],warn:'D10 晚。库存3；⚠️ 勿误选 ¥296（仅1早+不可取消）；全房型标可吸烟；差评提示餐具茶渍没消毒、窗玻璃糟糕；独库零起点携程标2.5km vs 简介"起点"矛盾待实地核。⚠️ ll 旧值 44.329022,84.88688 同店可复用、实拍照待采。 坐标：旧十天同店坐标复用（street）。',ref:'携程详情页↗',refUrl:'https://hotels.ctrip.com/hotels/699198.html',ctripId:'699198',nights:['D10'],breakfast:'2份/间（共6）；加早¥48/人',coordSource:'旧十天同店坐标复用',coordPrecision:'street',imgSource:'同店历史素材（旧十天版本本店实拍，非2026冬季现场）',priceStd:'双床：尊享特惠 2×1.35m ¥217 无早；油城景观双床 ¥296(1早)/¥305(2早)；凡舍主题双床同价。大床：油城景观大床 ¥296/¥305。',priceTriple:'油城景观亲子房 42㎡ ¥368（含延迟退房16:00＋净桑1份/天）。',tripleHas:'family'},
   {name:'赛里木湖逸扉酒店',ll:[44.608595,81.118984],geo:'area',addr:'博乐赛湖景区西海路7号塔玛瑕尔集群2号楼',tel:'0909-2272777',price:'高级湖景大床 ¥576；三间/晚 ¥1,728',hours:'16:00 后入住；仅限 18–99 岁',img:'assets/hotel_yifei.jpg',imgs:['assets/hotel_yifei.jpg','assets/hotel_yifei_1.jpg','assets/hotel_yifei_2.jpg','assets/hotel_yifei_3.jpg'],score:['4.7分','522条'],tags:['2026开业','景区内','1份早/间'],warn:'D11 晚。3间各1份＝3份正好够、不需补早；库存3；⚠️ 无空调、地暖可能不足（住客实录员工主动升两级房型）；差评提示烟味/花园垃圾/床靠背灰。⚠️ ll 旧值 44.608595,81.118984 同店可复用、实拍照待采。 坐标：旧十天同店坐标复用（area）。',ref:'携程详情页↗',refUrl:'https://hotels.ctrip.com/hotels/133417535.html',ctripId:'133417535',nights:['D11'],breakfast:'1份/间（共3正好够）',coordSource:'旧十天同店坐标复用',coordPrecision:'area',imgSource:'同店历史素材（旧十天版本本店实拍，非2026冬季现场）',priceStd:'双床：园景双床 ¥462 无早/¥511(1早)；高级湖景双床 ¥518/¥567；行政湖景双床 ¥554/¥603。大床：高级湖景大床 ¥527/¥576。',priceTriple:'无专门三人间；逸扉行政套房 45㎡ ¥508 无早/¥558(1早)，套房能否住3人页面未标明，订房页确认。',tripleHas:'suite-pending'},
@@ -1181,7 +1200,7 @@ const restaurants = [
 /*DATA:expenses:START —— tools/build_v2.py 从 trip-14n-v2.json 生成，勿手改*/
 const expenses = [
   {cat:'机票（三人公摊平摊·含税实价待出单）',items:[
-      {name:'深圳→乌市去程（熊大·熊大垫付）',detail:'去程 UQ2616 12/5 06:55 宝安T3→12:35 天山，737 无配餐/无免费托运；返程未买。订单1128152613173718',amount:'1,966',who:'公摊',nature:'查到·携程实单（去程；熊大熊大垫付，三人公摊平摊；返程待出单后并入合计）',ref:'去程实付 ¥1,966（87 积分）；返程 SC2325 待出单，含税/机建燃油以下单当日为准',refUrl:'—'},
+      {name:'深圳→乌市去程（熊大垫付）',detail:'去程 UQ2616 12/5 06:55 宝安T3→12:35 天山，737 无配餐/无免费托运；返程未买。订单1128152613173718',amount:'1,966',who:'公摊',nature:'查到·携程实单（去程；熊大垫付，三人公摊平摊；返程待出单后并入合计）',ref:'去程实付 ¥1,966（87 积分）；返程 SC2325 待出单，含税/机建燃油以下单当日为准',refUrl:'—'},
       {name:'深圳→乌市（怡哥）',detail:'第二张深圳去程票截图未见；返程未买',amount:'参考',who:'公摊',nature:'待出单·未核实（不臆造金额；返程待出单后并入合计）',ref:'裸价参照约 ¥1,900/人；含税以下单当日为准',refUrl:'—'},
       {name:'长沙→乌市去程（刘总·熊大垫付）',detail:'去程 CZ3467 12/5 08:55 黄花T2→14:00 天山，320 正餐；返程未买。订单1128152613057558',amount:'998',who:'公摊',nature:'查到·携程实单（去程；熊大垫付，三人公摊平摊；返程待出单后并入合计）',ref:'去程实付 ¥998（44 积分）；返程 MF8276 待出单，含税/机建燃油以下单当日为准',refUrl:'—'},
       {name:'机票税费（机建+燃油）',detail:'机建50+燃油140/航段×6段，约¥1,140；12月燃油或再调。⚠️实单总价是否已含机建燃油未拆分，待核避免与本项重复计税',amount:'1,140',who:'公摊',nature:'估算·参考（纳入公摊平摊；待实单明细核对）',ref:'清单第八节',refUrl:'—'}
@@ -1197,11 +1216,11 @@ const expenses = [
       {name:'市区↔机场打车(3程)',detail:'机场→近郊酒店；机场→大巴扎；12/19 05:30返程；夜间单价多源冲突（1.5/1.8/1.9元/km或+20%服务费），区间上限170已覆盖夜间上浮',amount:'125–170',who:'公摊',nature:'查到·地图实测(中值145)',ref:'清单第八节',refUrl:'—'}
     ]},
   {cat:'住宿（14晚；混合口径：金桥/隐阅/隐山/后段为3间房，温德姆套房、云蝶LOFT为1间三人同住）',items:[
-      {name:'D1 温德姆花园',detail:'云栖雅致套房1间三人同住·早1份；积分抵¥323后离店后付。订单1128152366216397',amount:'695.41',who:'公摊',nature:'查到·携程实单（熊大熊大垫付；1间套房同住，非3间；订单有效不退）',ref:'携程130240722；实付¥695.41（积分抵¥323）',refUrl:'https://hotels.ctrip.com/hotels/130240722.html'},
-      {name:'D2/D3 金桥假日(2晚)',detail:'12/6→12/8 3间惠享大床×2晚，离店后付；旧三人间¥567已退熊大',amount:'2,364',who:'公摊',nature:'查到·携程实单（怡哥怡哥垫付；3间大床2晚；旧金桥三人间1晚已原路退款）',ref:'携程2140187；间夜均¥394/间夜',refUrl:'https://hotels.ctrip.com/hotels/2140187.html'},
-      {name:'D4/D5 隐阅·山境(2晚)',detail:'12/8→12/10 3间豪华大床×2晚，离店后付；禾木桥店·苏木路48号',amount:'7,038',who:'公摊',nature:'查到·携程实单（怡哥怡哥垫付；3间大床2晚；房型全称/早份数/订单号待订单详情坐实）',ref:'隐阅·山境｜雪山景观民宿(禾木桥店)；间夜均¥1,173/间夜；ctripId未取到',refUrl:'—'},
-      {name:'D6/D7 云蝶归野(2晚)',detail:'12/10→12/12 1间两居室LOFT(1大床+2单人床，可住4)三人同住×2晚，离店后付；喀纳斯老村哈纳斯路27号',amount:'3,156',who:'公摊',nature:'查到·携程实单（怡哥怡哥垫付；⚠️1间LOFT三人同住，非3间房；房型全称/是否含早待订单详情坐实）',ref:'携程135008586；间夜均¥1,578/间夜；页面LOFT均价¥1,347/晚，订单高约¥231/晚待对账',refUrl:'https://hotels.ctrip.com/hotels/135008586.html'},
-      {name:'D8 隐山·Silvan(白哈巴·1晚)',detail:'12/12→12/13 3间在线付；富民路52号',amount:'1,864.42',who:'公摊',nature:'查到·携程实单（怡哥怡哥垫付；3间1晚；三笔在线付¥750.94/¥648.24/¥465.24）',ref:'携程121745528；间夜均¥621.47/间夜',refUrl:'https://hotels.ctrip.com/hotels/121745528.html'},
+      {name:'D1 温德姆花园',detail:'云栖雅致套房1间三人同住·早1份；积分抵¥323后离店后付。订单1128152366216397',amount:'695.41',who:'公摊',nature:'查到·携程实单（熊大垫付；1间套房同住，非3间；订单有效不退）',ref:'携程130240722；实付¥695.41（积分抵¥323）',refUrl:'https://hotels.ctrip.com/hotels/130240722.html'},
+      {name:'D2/D3 金桥假日(2晚)',detail:'12/6→12/8 3间惠享大床×2晚，离店后付；旧三人间¥567已退熊大',amount:'2,364',who:'公摊',nature:'查到·携程实单（怡哥垫付；3间大床2晚；旧金桥三人间1晚已原路退款）',ref:'携程2140187；间夜均¥394/间夜',refUrl:'https://hotels.ctrip.com/hotels/2140187.html'},
+      {name:'D4/D5 隐阅·山境(2晚)',detail:'12/8→12/10 3间豪华大床×2晚，离店后付；禾木桥店·苏木路48号',amount:'7,038',who:'公摊',nature:'查到·携程实单（怡哥垫付；3间大床2晚；房型全称/早份数/订单号待订单详情坐实）',ref:'隐阅·山境｜雪山景观民宿(禾木桥店)；间夜均¥1,173/间夜；ctripId未取到',refUrl:'—'},
+      {name:'D6/D7 云蝶归野(2晚)',detail:'12/10→12/12 1间两居室LOFT(1大床+2单人床，可住4)三人同住×2晚，离店后付；喀纳斯老村哈纳斯路27号',amount:'3,156',who:'公摊',nature:'查到·携程实单（怡哥垫付；⚠️1间LOFT三人同住，非3间房；房型全称/是否含早待订单详情坐实）',ref:'携程135008586；间夜均¥1,578/间夜；页面LOFT均价¥1,347/晚，订单高约¥231/晚待对账',refUrl:'https://hotels.ctrip.com/hotels/135008586.html'},
+      {name:'D8 隐山·Silvan(白哈巴·1晚)',detail:'12/12→12/13 3间在线付；富民路52号',amount:'1,864.42',who:'公摊',nature:'查到·携程实单（怡哥垫付；3间1晚；三笔在线付¥750.94/¥648.24/¥465.24）',ref:'携程121745528；间夜均¥621.47/间夜',refUrl:'https://hotels.ctrip.com/hotels/121745528.html'},
       {name:'D9 知禾',detail:'¥440×3【后段未定，维持估算】',amount:'1,320',who:'公摊',nature:'估算·待后段定案（未下单；金额随最终选店复核）',ref:'携程131639186（旧估算参照）',refUrl:'https://hotels.ctrip.com/hotels/131639186.html'},
       {name:'D10 玛依塔柯',detail:'¥305×3(2早档)【后段未定，维持估算】',amount:'915',who:'公摊',nature:'估算·待后段定案（未下单；金额随最终选店复核）',ref:'携程699198（旧估算参照）',refUrl:'https://hotels.ctrip.com/hotels/699198.html'},
       {name:'D11 逸扉',detail:'¥576×3【后段未定，维持估算】',amount:'1,728',who:'公摊',nature:'估算·待后段定案（未下单；金额随最终选店复核）',ref:'携程133417535（旧估算参照）',refUrl:'https://hotels.ctrip.com/hotels/133417535.html'},
@@ -1325,6 +1344,69 @@ function renderSpots(){
       const card=g.closest('.spot-card');
       const si=Number(card.dataset.spot);
       openSpotGallery(si,at);
+    });
+  });
+}
+const ACT_GROUP_ORDER = ['主线', '可选'];
+function actImgs(a){const x=(a.imgs&&a.imgs.length)?a.imgs:[a.img];return x.filter(Boolean);}
+function renderActivities(){
+  const groups={};
+  activities.forEach((a,i)=>{(groups[a.group||'其他']=groups[a.group||'其他']||[]).push(i);});
+  const order=ACT_GROUP_ORDER.filter(g=>groups[g]).concat(Object.keys(groups).filter(g=>!ACT_GROUP_ORDER.includes(g)));
+  const html=order.map(g=>{
+    const idxs=groups[g];
+    const cards=idxs.map(i=>{
+      const a=activities[i];
+      const imgs=actImgs(a);
+      const _src=String(a.imgSource||'');
+      const _sketch=/示意|非.{0,8}实拍|非2026|片区|历史素材/.test(_src);
+      const _note=imgs.length&&_sketch?`<div class="spot-card__ref">场景示意，非本行程现场实拍</div>`:'';
+      const media=imgs.length
+        ? galleryTpl(imgs,a.name,'act-'+i)+_note
+        : `<div class="spot-card__gallery act-card__empty"><span>实拍图待采，先看文字说明</span></div>`;
+      const book=a.bookUrl
+        ? `<div class="spot-card__book"><a href="${a.bookUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${a.book}</a></div>`
+        : (a.book?`<div class="spot-card__book">${a.book}</div>`:'');
+      const phone=(a.phone&&a.phone!=='—')?`<div class="place-card__detail">${IC.phone}${a.phone}</div>`:'';
+      const spot=(a.spot&&a.spot!=='—')?`<div class="spot-card__ref">对应看点：${a.spot}</div>`:'';
+      return `<div class="spot-card reveal" data-act="${i}">
+        ${media}
+        <div class="spot-card__body">
+          <div class="spot-card__name"><span class="spot-card__kind">${a.kind}</span><span class="place-card__tag">${a.day}</span><span class="place-card__tag act-level act-level--${a.level}">${a.level} 档</span>${a.name}</div>
+          <div class="spot-card__desc">${a.desc}</div>
+          <div class="place-card__detail">${IC.coin}${a.price}</div>
+          ${phone}${book}${spot}<div class="spot-card__ref">${a.ref}</div>
+        </div></div>`;
+    }).join('');
+    return `<div class="region-head anchor-block" id="reg-act-${g}"><span class="region-head__name">${g}</span><span class="region-head__meta">${idxs.length} 项</span></div><div class="spots-grid">${cards}</div>`;
+  }).join('');
+  document.getElementById('activitiesGrid').innerHTML=html;
+  const sub=document.getElementById('actSubnav');
+  if(sub){sub.innerHTML='<span class="subnav__label">分组</span>'+order.map((g,k)=>`<span class="subnav__chip${k===0?' active':''}" data-anchor="reg-act-${g}">${g}</span>`).join('');}
+  /* 活动图组绑定：左右箭头 / 圆点 / 点图开大图 */
+  document.querySelectorAll('#activitiesGrid .spot-card__gallery').forEach(g=>{
+    const len=Number(g.dataset.len||1);
+    let at=0;
+    const track=g.querySelector('.spot-card__track');
+    const cnt=g.querySelector('.spot-card__count');
+    const dots=Array.prototype.slice.call(g.querySelectorAll('.spot-card__dot'));
+    function go(k){
+      at=(k+len)%len;
+      if(track)track.style.transform='translateX(-'+(at*100)+'%)';
+      if(cnt)cnt.textContent=(at+1)+'/'+len;
+      dots.forEach((d,di)=>d.classList.toggle('on',di===at));
+      g.dataset.at=String(at);
+    }
+    g.querySelectorAll('[data-dir]').forEach(b=>{
+      b.addEventListener('click',ev=>{ev.stopPropagation();go(at+Number(b.dataset.dir));});
+    });
+    dots.forEach(d=>d.addEventListener('click',ev=>{ev.stopPropagation();go(Number(d.dataset.i));}));
+    g.addEventListener('click',ev=>{
+      if(ev.target.closest('[data-dir]')||ev.target.closest('.spot-card__dot'))return;
+      ev.stopPropagation();
+      const card=g.closest('.spot-card');
+      const ai=Number(card.dataset.act);
+      openActGallery(ai,at);
     });
   });
 }
@@ -1633,6 +1715,11 @@ let lightboxData=[],lightboxIdx=0,lightboxReturnFocus=null;
 function openSpotGallery(i,k){
   const s=spots[i];const list=spotImgs(s);
   lightboxData=list.map((u,ki)=>({img:u,cap:s.name+' · '+(ki+1)+'/'+list.length}));
+  lightboxIdx=k||0;showLightbox();
+}
+function openActGallery(i,k){
+  const a=activities[i];const list=actImgs(a);
+  lightboxData=list.map((u,ki)=>({img:u,cap:a.name+' · '+(ki+1)+'/'+list.length}));
   lightboxIdx=k||0;showLightbox();
 }
 function openLightboxSpot(i){openSpotGallery(i,0);}
@@ -2032,6 +2119,7 @@ function codeBadge(n){var c=CARD_CODE[n];return (c&&c.length)?'<span class="poi-
 /* 初始化 */
 renderItinerary();
 renderSpots();
+renderActivities();
 renderHotels();
 renderRestaurants();
 renderLodgeStrip();
