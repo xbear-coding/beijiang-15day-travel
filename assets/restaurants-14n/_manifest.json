@@ -31,6 +31,36 @@
    "md5": "e953db5441f38a3780fe427f841080e6"
   }
  ],
+ "haierbage": [
+  {
+   "file": "food_haierbage.jpg",
+   "w": 480,
+   "h": 640,
+   "kb": 71.6,
+   "md5": "57cb08849cdfec1b597d8a072671399c"
+  },
+  {
+   "file": "food_haierbage_1.jpg",
+   "w": 640,
+   "h": 480,
+   "kb": 68.9,
+   "md5": "54f195ab77ce371bb5143bad80e5cfdf"
+  },
+  {
+   "file": "food_haierbage_2.jpg",
+   "w": 640,
+   "h": 608,
+   "kb": 59.6,
+   "md5": "5190d390255a47342320d8af36187133"
+  },
+  {
+   "file": "food_haierbage_3.jpg",
+   "w": 640,
+   "h": 480,
+   "kb": 78.4,
+   "md5": "4a65062b2e76bbaadc96b1ad9cd8c27b"
+  }
+ ],
  "huasheng": [
   {
    "file": "food_huasheng.jpg",
