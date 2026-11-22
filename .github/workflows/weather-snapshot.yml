@@ -1,0 +1,40 @@
+name: weather-snapshot
+
+# 每小时抓一次天气，写进 assets/weather.json（同域静态数据）。
+# 页面优先读这个文件，不再依赖浏览器跨境请求。抓不到就保留旧快照，不覆盖。
+on:
+  schedule:
+    - cron: "17 * * * *"
+  push:
+    paths:
+      - ".github/workflows/weather-snapshot.yml"
+      - ".github/scripts/weather_snapshot.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weather-snapshot
+  cancel-in-progress: true
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 抓取并写入快照
+        run: python3 .github/scripts/weather_snapshot.py
+
+      - name: 提交变化
+        run: |
+          git config user.name "weather-bot"
+          git config user.email "weather-bot@users.noreply.github.com"
+          git add assets/weather.json
+          if git diff --cached --quiet; then
+            echo "快照无变化，跳过提交"
+          else
+            git commit -m "chore: 天气快照 $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+          fi
