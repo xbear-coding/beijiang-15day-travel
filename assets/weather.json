@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-24T06:37:56+08:00",
- "generated_cn": "2026-11-24 06:37",
+ "generated": "2026-11-24T14:56:54+08:00",
+ "generated_cn": "2026-11-24 14:56",
  "source": "open-meteo",
  "source_url": "https://open-meteo.com/",
  "license": "CC-BY-4.0",
@@ -18,8 +18,8 @@
    "lat": 47.827,
    "lon": 88.133,
    "date": "2026-11-24",
-   "tmin": -3,
-   "tmax": 7
+   "tmin": -4,
+   "tmax": 6
   },
   {
    "loc": "禾木",
@@ -67,7 +67,7 @@
    "lon": 84.887,
    "date": "2026-11-24",
    "tmin": -2,
-   "tmax": 5
+   "tmax": 4
   },
   {
    "loc": "赛里木湖",
