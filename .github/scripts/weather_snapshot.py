@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """GitHub Actions 定时抓取天气快照 → assets/weather.json（同域静态数据）。
 页面优先读这个文件，彻底避开浏览器跨域/跨境请求；抓取失败时不覆盖旧快照。
+r122：除最高/最低温外，同时取 WMO weathercode（页面据此显示阴晴雨雪/雾），
+      否则每小时定时任务会用「只有温度」的旧结构把天气现象覆盖掉。
 """
 import io, json, os, sys, time, datetime, urllib.request
 
@@ -25,7 +27,7 @@ def build_url():
     lat = ",".join("%.4f" % p[1] for p in POINTS)
     lon = ",".join("%.4f" % p[2] for p in POINTS)
     return ("https://api.open-meteo.com/v1/forecast?latitude=%s&longitude=%s"
-            "&daily=temperature_2m_max,temperature_2m_min&timezone=Asia/Shanghai&forecast_days=1"
+            "&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=Asia/Shanghai&forecast_days=1"
             % (lat, lon))
 
 
@@ -56,11 +58,14 @@ def main():
         d = items[i].get("daily", {}) if i < len(items) else {}
         tmax = (d.get("temperature_2m_max") or [None])[0]
         tmin = (d.get("temperature_2m_min") or [None])[0]
+        # WMO 天气码：Open-Meteo 的 daily 数组键名是 weathercode（兼容 weather_code 写法）
+        wcode = (d.get("weathercode") or d.get("weather_code") or [None])[0]
         pts.append({
             "loc": name, "lat": la, "lon": lo,
             "date": (d.get("time") or [None])[0],
             "tmin": None if tmin is None else round(tmin),
             "tmax": None if tmax is None else round(tmax),
+            "code": None if wcode is None else int(wcode),
         })
 
     if not any(p["tmin"] is not None for p in pts):
