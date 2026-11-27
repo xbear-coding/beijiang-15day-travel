@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-27T07:48:55+08:00",
- "generated_cn": "2026-11-27 07:48",
+ "generated": "2026-11-27T16:22:12+08:00",
+ "generated_cn": "2026-11-27 16:22",
  "source": "open-meteo",
  "source_url": "https://open-meteo.com/",
  "license": "CC-BY-4.0",
@@ -64,7 +64,7 @@
    "lat": 46.091,
    "lon": 85.697,
    "date": "2026-11-27",
-   "tmin": -1,
+   "tmin": -2,
    "tmax": 2,
    "code": 51
   },
@@ -74,7 +74,7 @@
    "lon": 84.887,
    "date": "2026-11-27",
    "tmin": -2,
-   "tmax": 5,
+   "tmax": 4,
    "code": 45
   },
   {
@@ -84,14 +84,14 @@
    "date": "2026-11-27",
    "tmin": -3,
    "tmax": 2,
-   "code": 73
+   "code": 75
   },
   {
    "loc": "温泉县",
    "lat": 44.981,
    "lon": 81.036,
    "date": "2026-11-27",
-   "tmin": -2,
+   "tmin": -3,
    "tmax": 2,
    "code": 73
   }
