@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-28T02:55:27+08:00",
- "generated_cn": "2026-11-28 02:55",
+ "generated": "2026-11-28T09:56:44+08:00",
+ "generated_cn": "2026-11-28 09:56",
  "source": "open-meteo",
  "source_url": "https://open-meteo.com/",
  "license": "CC-BY-4.0",
@@ -19,7 +19,7 @@
    "lat": 47.827,
    "lon": 88.133,
    "date": "2026-11-28",
-   "tmin": -5,
+   "tmin": -4,
    "tmax": -1,
    "code": 86
   },
@@ -28,8 +28,8 @@
    "lat": 48.578,
    "lon": 87.441,
    "date": "2026-11-28",
-   "tmin": -8,
-   "tmax": 0,
+   "tmin": -10,
+   "tmax": -1,
    "code": 86
   },
   {
@@ -39,7 +39,7 @@
    "date": "2026-11-28",
    "tmin": -12,
    "tmax": -4,
-   "code": 86
+   "code": 85
   },
   {
    "loc": "白哈巴",
@@ -48,34 +48,34 @@
    "date": "2026-11-28",
    "tmin": -13,
    "tmax": -1,
-   "code": 95
+   "code": 86
   },
   {
    "loc": "布尔津",
    "lat": 47.694,
    "lon": 86.874,
    "date": "2026-11-28",
-   "tmin": -2,
+   "tmin": -1,
    "tmax": 2,
-   "code": 71
+   "code": 85
   },
   {
    "loc": "乌尔禾",
    "lat": 46.091,
    "lon": 85.697,
    "date": "2026-11-28",
-   "tmin": -1,
-   "tmax": 3,
-   "code": 73
+   "tmin": 0,
+   "tmax": 2,
+   "code": 71
   },
   {
    "loc": "独山子",
    "lat": 44.329,
    "lon": 84.887,
    "date": "2026-11-28",
-   "tmin": -1,
-   "tmax": 7,
-   "code": 85
+   "tmin": 0,
+   "tmax": 6,
+   "code": 51
   },
   {
    "loc": "赛里木湖",
